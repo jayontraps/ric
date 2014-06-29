@@ -6,7 +6,9 @@
 
 
 .frame {
+	margin-top: 2.2em;
 	width:100%;
+	@include opacity(0);
 	// padding:5px;
 	// background-color: rgba($light_grey, 0.5);
 
@@ -34,6 +36,8 @@
 		    	a {
 					color: $body_color;
 					font-family: $heading_font;
+					letter-spacing: $custom-letter-spacing;   
+
 					// @include text-shadow(rgba(#000, 0.2) 1px 1px 0);	
 
 					.myArrow {
@@ -71,7 +75,7 @@
 			a {
 			    display: block;
 			    text-decoration: none;    
-			    font-family:$sub_heading_font;
+			    font-family:$heading_font;
 			    // border-left: 1px solid $body_color_light;
 			    // padding-left: 2.6em;
 

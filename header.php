@@ -15,16 +15,15 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link type="text/css" rel="stylesheet" href="http://fast.fonts.net/cssapi/794f35db-1827-4153-93e2-2b81664ba14c.css"/>
-<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
 <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed site">
 
-	<div class="full">
+	<div class="grid wrapper">
 
-		<header id="masthead" class="site-header grid group" role="banner">
+		<header id="masthead" class="site-header col-1-4" role="banner">
 			
 
 			<div class="site-title">
@@ -80,6 +79,6 @@
  -->
 		</header><!-- #masthead -->
 
-	</div>
 
-	<div id="content" class="site-content">
+
+	<div id="content" class="site-content col-3-4">

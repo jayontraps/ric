@@ -1,11 +1,7 @@
 // layout
-$max-width: 900px;
+$max-width: 1100px;
 
 
-// spacing
-$pad: 20px;
-
-$margin-bottom: .5em;
 
 // colors
 $wide_bg : #999999;
@@ -14,7 +10,7 @@ $bg : #fbfbfb;
 
 $body_color	:#333333;
 
-$body_color_light: rgba($body_color, 0.5);
+$body_color_light: rgba($body_color, 0.6);
 
 $off_white: #fbfbfb;
 
@@ -28,28 +24,31 @@ $heading_color: #fbfbfb; // #999
 
 $main_heading_color: #999;
 
-
 // $primary_color: #23A38F;
 $primary_color: #d40000;
 
 
 
 
-// fonts
-$body_font : 'Open Sans', sans-serif;
+// fonts and typography
+$body_font : 'PT Sans', sans-serif;
 $body_font_size : 18px;
 $body_line_height : 1.5em;
+$letter-spacing : 100%;
+$custom-letter-spacing: .01em;
 
 // $heading_font : 'Brandon Grot W01 Black', sans-serif;
 $heading_font : 'bebas_neueregular', sans-serif;
 
-// $sub_heading_font:'BrandonGrotW01-Regular';
-
-$sub_heading_font: 'bebas_neueregular', sans-serif;
+// $heading_font:'BrandonGrotW01-Regular';
 
 
-$letter-spacing : 100%;
-$custom-letter-spacing: .1em;
+
+
+// spacing
+$pad: 20px;
+$margin-bottom: .5em;
+
 
 
 // headings
@@ -60,7 +59,9 @@ $h4-size:           1.2em; // .delta
 $h5-size:           1em; // .epsilon
 $h6-size:           1em; // .zeta
 
-$h2-size-bookpage: 36px;
+
+
+
 
 // links
 $link_color: royalblue;

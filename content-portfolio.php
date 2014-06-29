@@ -5,7 +5,7 @@
  */
 ?>
 
-<div class="grid">
+
 
 
 		<div class="frame">
@@ -40,5 +40,3 @@
  -->
 
 
-
-</div>

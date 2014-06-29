@@ -38,30 +38,40 @@
 /* from underscores style.css = Menu
 ----------------------------------------------- */
 
+// .main-navigation {
+//     display: block;
+// }
+
+// .main-navigation ul {
+//     list-style: none;
+//     margin: 0;
+//     padding-left: 0;
+// }
+
+// .main-navigation ul ul {
+//     // display: none;
+//     margin-left: 4em;
+// }
+
+// .main-navigation ul li:hover > ul {
+//     display: block;
+// }
+#site-navigation {
+    @include opacity(0);
+    @include transition-property(all);
+    @include transition-duration(0.5s);
+    @include transition-timing-function(ease-in);    
+}
+
 .main-navigation {
     display: block;
-    float: right;
 }
+
 .main-navigation ul {
     list-style: none;
     margin: 0;
-    padding-left: 0;
+    padding: 0;
 }
-
-.main-navigation ul ul {
-    display: none;
-    float: left;
-    left: 0;
-    position: absolute;
-    z-index: 99999;
-}
-
-.main-navigation ul li:hover > ul {
-    display: block;
-}
-
-
-
 
 
 
@@ -75,36 +85,20 @@
 
 
 #menu-primary > li {
-
-    float: left;
     letter-spacing: $custom-letter-spacing;   
-    font-family:$sub_heading_font;
+    font-family:$heading_font;
     font-weight:normal;
-    text-transform: uppercase;    
-    // padding: 0 1em;
-
-    &:first-child {
-        padding-left: 0;
-    }
 
    > a {
-        // padding:$body_font_size 0 0 0;
-        padding:.5em 0 0 0;
-        
-        border-top: 4px solid $off_white;
 
-        display: inline-block;
-        // margin-top: -4px;
         text-decoration: none; 
-        // font-size: .8em;
-
         color: $body_color_light;  
-          @include transition-property(all);
-          @include transition-duration(0.15s);
-          @include transition-timing-function(ease-in);     
+        @include transition-property(all);
+        @include transition-duration(0.15s);
+        @include transition-timing-function(ease-in);     
 
         &:hover {
-            border-top: 4px solid $body_color; 
+            // padding-left:.3em;
             color: $body_color; 
         }      
     }
@@ -112,55 +106,74 @@
     &.current-menu-item, &.current-page-ancestor   {
 
         > a {
-            border-top: 4px solid $body_color; 
+            // padding-left:.3em;
             color: $body_color;            
+        }
+
+        .subMenuTrigger, .navBullets {
+            color: $body_color;
         }
     }
 
     &.on {
         > a {
-            border-top: 4px solid $body_color; 
+            // padding-left:.3em;
             color: $body_color;             
         }
     }
 
 }
 
+#menu-primary > li {
+    // margin-bottom: .5em;
+} 
 
 
 
 
 
-.sub-menu {
 
-    list-style:none;
+/* Sub-Nav styles ---------------------- */
+.main-navigation ul {
 
-    li {
-        float: left;
-        margin-right:1em;
+    .sub-menu {
+        display: none;
 
-       > a {
-            // padding:.5em 2em 1em 0;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: $custom-letter-spacing;
-            font-size: .8em;
-            color: $body_color_light;  
+        margin: .5em 0 0 7em;
 
-            &:hover {
-                // border-top: none; 
-                color: $body_color; 
+        li {
+
+           > a {
+                text-decoration: none;
+                text-transform: uppercase;
+                // letter-spacing: $custom-letter-spacing;
+                color: $body_color_light;  
+
+                &:hover {
+                    color: $body_color; 
+                }
             }
+
+            &.current-menu-item, &.current-page-ancestor   {
+
+                > a {
+                    border-top: none; 
+                    color: $body_color;            
+                }
+            }        
         }
-
-        &.current-menu-item, &.current-page-ancestor   {
-
-            > a {
-                border-top: none; 
-                color: $body_color;            
-            }
-        }        
     }
+
+}
+
+.page-template-page-portfolio-php {  
+
+.main-navigation ul {
+
+    .sub-menu {
+        display: block;
+        }
+    }    
 }
 
 
@@ -171,56 +184,74 @@
 
 .navBullets {
     display: inline-block;
-    margin: 0 25px;
+    margin-right:1em;
     color: $body_color_light;
+
 }
 
+.subMenuTrigger {
+    display: inline-block;
+    font-size: 1.1em;
+    // width: 1em;
+    // height: 1em;
+    margin-left:1em;
+    color: $body_color_light; 
 
-
-
-
-
-
-
-.page-template-page-portfolio-php {
-
-    #menu-primary li > a {
-        @include opacity(0);
-        @include transition-property(opacity);
-        @include transition-duration(500ms);        
-    }
-
-    ul#menu-primary:hover li > a {
-            @include opacity(1);
-    }
-
-    #menu-primary li > span {
-        @include opacity(0);
-        @include transition-property(opacity);
-        @include transition-duration(500ms);         
-    }
-
-    ul#menu-primary:hover li > span {
-            @include opacity(1);
-    }    
-
-
-
-
-    #menu-primary ul li > a {
-        @include opacity(1);
+    &:hover {
+        cursor: pointer;
     }   
 
-
-
-    #menu-primary > li:first-child > a {
-        @include opacity(1);
+    &.rotate {
+        @include transform(rotate(90deg)); 
     }
-
-    .main-navigation ul ul {
-        display: block;
-    }    
 }
+
+
+
+
+
+
+
+
+// .page-template-page-portfolio-php {
+
+//     #menu-primary li > a {
+//         @include opacity(0);
+//         @include transition-property(opacity);
+//         @include transition-duration(500ms);        
+//     }
+
+//     ul#menu-primary:hover li > a {
+//             @include opacity(1);
+//     }
+
+//     #menu-primary li > span {
+//         @include opacity(0);
+//         @include transition-property(opacity);
+//         @include transition-duration(500ms);         
+//     }
+
+//     ul#menu-primary:hover li > span {
+//             @include opacity(1);
+//     }    
+
+
+
+
+//     #menu-primary ul li > a {
+//         @include opacity(1);
+//     }   
+
+
+
+//     #menu-primary > li:first-child > a {
+//         @include opacity(1);
+//     }
+
+//     .main-navigation ul ul {
+//         display: block;
+//     }    
+// }
 
 
 
@@ -387,39 +418,39 @@
 
 
 
-/* Portfolio Sub-Nav */
-.portfolio_subnav {
+// /* Portfolio Sub-Nav */
+// .portfolio_subnav {
     
-    clear: right;
-    position: absolute;
-    right:0;
-    bottom:2em;
-    margin:0 0 0 0;
-    padding:0;
+//     clear: right;
+//     position: absolute;
+//     right:0;
+//     bottom:2em;
+//     margin:0 0 0 0;
+//     padding:0;
 
-    li {
+//     li {
         
-        &.current_page_item {
-            a {
-                border-bottom: 5px solid rgba($off_white, 0.3);
-            }
-        }
+//         &.current_page_item {
+//             a {
+//                 border-bottom: 5px solid rgba($off_white, 0.3);
+//             }
+//         }
 
-        a {
-            margin-left: 1.5em;
-            text-transform: uppercase;
-            font-family: $sub_heading_font;
-            font-weight: normal;
-            color: $heading_color;
-            font-size: .9em;
-            border-bottom: 5px solid transparent;
+//         a {
+//             margin-left: 1.5em;
+//             text-transform: uppercase;
+//             font-family: $heading_font;
+//             font-weight: normal;
+//             color: $heading_color;
+//             font-size: .9em;
+//             border-bottom: 5px solid transparent;
 
-            &:hover {
-               border-bottom: 5px solid rgba($off_white, 0.3); 
-            }
-        }
-    }
-}
+//             &:hover {
+//                border-bottom: 5px solid rgba($off_white, 0.3); 
+//             }
+//         }
+//     }
+// }
 
 
 

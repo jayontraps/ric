@@ -10,6 +10,9 @@
 
 	</div><!-- #content -->
 
+</div> <!-- .grid -->
+
+
 	<footer id="colophon" class="site-footer full" role="contentinfo">
 		<div class="site-info grid">
 		<nav>
@@ -23,7 +26,6 @@
 
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
-</div><!-- #page -->
 
 <?php wp_footer(); ?>
 

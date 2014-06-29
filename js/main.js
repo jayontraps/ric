@@ -11,12 +11,38 @@
                 $this.parent().removeClass('on');
             });
 
-        var navBullets = $('<span/>', {
-            html: '&bull;',
-            'class': 'navBullets'
+        // var navBullets = $('<span/>', {
+        //     html: '&bull;',
+        //     'class': 'navBullets'
+        // });
+
+        var subMenuTrigger = $('<span/>', {
+            html: '&raquo;',
+            'class': 'subMenuTrigger'
         });
 
-        $("#menu-primary > li").not(':first').prepend(navBullets);
+        // $("#menu-primary > li").prepend(navBullets);
+
+        $('#menu-item-54 > a').after(subMenuTrigger);
+
+
+        if ($('body').hasClass('page-template-page-portfolio-php')) {
+            $(subMenuTrigger).addClass('rotate');
+        };
+
+        $(subMenuTrigger).on('click', function() {
+            $('.sub-menu').slideToggle();
+            $(this).toggleClass('rotate');
+        });
+
+
+        // fade in content on pageload
+        $('#site-navigation, .frame').animate({
+            opacity: 1
+          }, 400);
+
+
+
 
         // sticky nav  
 

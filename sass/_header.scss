@@ -1,88 +1,26 @@
 .site-header {
 	padding: 0 0 0 0;
-	position: relative;
-	border-top:5px solid $primary_color;
-	// border-bottom: 1px dashed $heading_color;
+	position: relative;	
 }
 
 .site-title {
-	// width:330px;
-	// width:20%;
-	float:left;
 	position: relative;
-	// margin-top:$body_font_size;
-	margin-top: .5em;
+	margin: .5em 0 3em 0;
 	a {
-		display: block;
-		// overflow: auto;
-		// width: 320px;
-		
+		display: block;		
 		text-decoration: none;
-		text-align: right;
-		// color: $heading_color;
 
-		letter-spacing: .25em;
-
-		// border: 2px solid $body_color_light;
-		
-		// border-left: 4px solid $primary_color;
-		// border-right: 4px solid $primary_color;
-		// border-bottom: 4px solid $primary_color;
-
-		// background-color: $primary_color;
-		// padding: 1em;
-
-		h1 {
-			// width: 165px;
-			// float: left;			
-			font-size: 2em;
-			// @include text-shadow(rgba(#000, 0.2) 1px 1px 0);
-		    letter-spacing: $custom-letter-spacing;   
-
-			// color: $body_color;
-			color: #d40000;
-			// padding:1em 1em 0 1em;
-			
+		h1 {		
+			letter-spacing: $custom-letter-spacing;   
+			color: #d40000;		
+			font-size: 1.789473684em;
+			line-height: 1.588235294em;
+			margin-top: 0.79411765em;
+			margin-bottom: 0.79411765em;				
 		}
 
-		h2 {
-			// width: 165px;
-			// float: right;				
-			font-family: $heading_font;
-			color: $body_color;
-			// @include text-shadow(rgba(#000, 0.2) 1px 1px 0);
-			font-size: 1em;
-    		letter-spacing: $custom-letter-spacing;   
-			padding-top: 10px;
-
-			// padding-top: .5em;
-			// border-top: 1px dashed rgba(251, 251, 251, 0.3);
-		}
 	}
 }
 
 
 
-
-
-
-// #cross:before, #cross:after {
-//   content: "";
-//   position: absolute;
-//   z-index: -1;
-//   background: #d00;
-// }
-
-// #cross:before {
-//   left: 50%;
-//   width: 2px;
-//   margin-left: -15%;
-//   height: 100%;
-// }
-
-// #cross:after {
-//   top: 50%;
-//   height: 2px;
-//   margin-top: -15%;
-//   width: 100%;
-// }

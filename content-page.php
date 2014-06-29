@@ -7,37 +7,27 @@
 ?>
 
 
-<div class="grid">
 
-	<div class="gallery col-2-3">
 
-		<div class="frame">
 			<?php if ( has_post_thumbnail() ) { the_post_thumbnail();} ?>
-		</div>
-
-	</div>
 
 
 
-	<div class="col-1-3 gallery_intro">
 
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			
-			<header class="entry-header">
-				<h1 class="entry-title"><?php the_title(); ?></h1>
-			</header><!-- .entry-header -->
-
-			<div class="entry-content">				
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				
-				<?php the_content(); ?>
-			
-			</div><!-- .entry-content -->
+<!-- 				<header class="entry-header">
+					<h2 class="entry-title"><?php the_title(); ?></h2>
+				</header>
+ -->
+				<div class="entry-content">				
+					
+					<?php the_content(); ?>
+				
+				</div><!-- .entry-content -->
 
-		</article><!-- #post-## -->
+			</article><!-- #post-## -->
 
 
-	</div><!-- .gallery_intro  -->
 
-
-</div> <!-- .grid -->
 

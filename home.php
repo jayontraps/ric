@@ -5,7 +5,7 @@
     
 get_header(); ?>
 
-	<div id="primary" class="content-area grid">
+	<div id="primary" class="content-area">
 <!-- 
 				<div class="corner tl"></div>
 				<div class="corner tr"></div>
