@@ -1,0 +1,1323 @@
+@font-face {
+  font-family: 'bebas_neueregular';
+  src: url("../fonts/BebasNeue-webfont.eot");
+  src: url("../fonts/BebasNeue-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/BebasNeue-webfont.woff") format("woff"), url("../fonts/BebasNeue-webfont.ttf") format("truetype"), url("../fonts/BebasNeue-webfont.svg#bebas_neueregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 8, ../sass/_reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  border: 0;
+  font-family: inherit;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+/* line 19, ../sass/_reset.scss */
+html {
+  font-size: 62.5%;
+  /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+  overflow-y: scroll;
+  /* Keeps page centered in all browsers regardless of content height */
+  -webkit-text-size-adjust: 100%;
+  /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+  -ms-text-size-adjust: 100%;
+  /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+}
+
+/* line 27, ../sass/_reset.scss */
+*,
+*:before,
+*:after {
+  /* apply a natural box layout model to all elements; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+  -webkit-box-sizing: border-box;
+  /* Not needed for modern webkit but still used by Blackberry Browser 7.0; see http://caniuse.com/#search=box-sizing */
+  -moz-box-sizing: border-box;
+  /* Still needed for Firefox 28; see http://caniuse.com/#search=box-sizing */
+  box-sizing: border-box;
+}
+
+/* line 32, ../sass/_reset.scss */
+body {
+  background: #fff;
+}
+
+/* line 44, ../sass/_reset.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section {
+  display: block;
+}
+
+/* line 47, ../sass/_reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 50, ../sass/_reset.scss */
+table {
+  /* tables still need 'cellspacing="0"' in the markup */
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* line 54, ../sass/_reset.scss */
+caption, th, td {
+  font-weight: normal;
+  text-align: left;
+}
+
+/* line 59, ../sass/_reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+}
+
+/* line 62, ../sass/_reset.scss */
+blockquote, q {
+  quotes: "" "";
+}
+
+/* line 65, ../sass/_reset.scss */
+a:focus {
+  outline: thin dotted;
+}
+
+/* line 69, ../sass/_reset.scss */
+a:hover,
+a:active {
+  outline: 0;
+}
+
+/* line 72, ../sass/_reset.scss */
+a img {
+  border: 0;
+}
+
+/*--------------------------------------------------------------
+3.0 Elements
+--------------------------------------------------------------*/
+/* line 4, ../sass/_underscore.scss */
+hr {
+  background-color: #ccc;
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5em;
+}
+
+/* line 10, ../sass/_underscore.scss */
+ul, ol {
+  margin: 0 0 1.5em 3em;
+}
+
+/* line 13, ../sass/_underscore.scss */
+ul {
+  list-style: disc;
+}
+
+/* line 16, ../sass/_underscore.scss */
+ol {
+  list-style: decimal;
+}
+
+/* line 20, ../sass/_underscore.scss */
+li > ul,
+li > ol {
+  margin-bottom: 0;
+  margin-left: 1.5em;
+}
+
+/* line 24, ../sass/_underscore.scss */
+dt {
+  font-weight: bold;
+}
+
+/* line 27, ../sass/_underscore.scss */
+dd {
+  margin: 0 1.5em 1.5em;
+}
+
+/* line 30, ../sass/_underscore.scss */
+img {
+  height: auto;
+  /* Make sure images are scaled correctly. */
+  max-width: 100%;
+  /* Adhere to container width. */
+}
+
+/* line 34, ../sass/_underscore.scss */
+figure {
+  margin: 0;
+}
+
+/* line 37, ../sass/_underscore.scss */
+table {
+  margin: 0 0 1.5em;
+  width: 100%;
+}
+
+/* line 41, ../sass/_underscore.scss */
+th {
+  font-weight: bold;
+}
+
+/*--------------------------------------------------------------
+7.0 Alignments
+--------------------------------------------------------------*/
+/* line 49, ../sass/_underscore.scss */
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5em;
+}
+
+/* line 54, ../sass/_underscore.scss */
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em;
+}
+
+/* line 59, ../sass/_underscore.scss */
+.aligncenter {
+  clear: both;
+  display: block;
+  margin: 0 auto;
+}
+
+/*--------------------------------------------------------------
+8.0 Clearings
+--------------------------------------------------------------*/
+/* line 79, ../sass/_underscore.scss */
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+  content: '';
+  display: table;
+}
+
+/* line 89, ../sass/_underscore.scss */
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+  clear: both;
+}
+
+/*--------------------------------------------------------------
+9.0 Widgets
+--------------------------------------------------------------*/
+/* line 96, ../sass/_underscore.scss */
+.widget {
+  margin: 0 0 1.5em;
+}
+
+/* Make sure select elements fit in widgets */
+/* line 101, ../sass/_underscore.scss */
+.widget select {
+  max-width: 100%;
+}
+
+/* Search widget */
+/* line 106, ../sass/_underscore.scss */
+.widget_search .search-submit {
+  display: none;
+}
+
+/*--------------------------------------------------------------
+10.0 Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+10.1 Posts and pages
+--------------------------------------------------------------*/
+/* line 118, ../sass/_underscore.scss */
+.hentry {
+  margin: 0;
+}
+
+/* line 122, ../sass/_underscore.scss */
+.byline,
+.updated {
+  display: none;
+}
+
+/* line 126, ../sass/_underscore.scss */
+.single .byline,
+.group-blog .byline {
+  display: inline;
+}
+
+/* line 131, ../sass/_underscore.scss */
+.page-content,
+.entry-content,
+.entry-summary {
+  margin: 0;
+}
+
+/* line 134, ../sass/_underscore.scss */
+.page-links {
+  clear: both;
+  margin: 0;
+}
+
+/*--------------------------------------------------------------
+10.2 Asides
+--------------------------------------------------------------*/
+/* line 143, ../sass/_underscore.scss */
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+  display: none;
+}
+
+/*--------------------------------------------------------------
+10.3 Comments
+--------------------------------------------------------------*/
+/* line 150, ../sass/_underscore.scss */
+.comment-content a {
+  word-wrap: break-word;
+}
+
+/*--------------------------------------------------------------
+11.0 Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+/* line 161, ../sass/_underscore.scss */
+.infinite-scroll .paging-navigation,
+.infinite-scroll.neverending .site-footer {
+  /* Theme Footer (when set to scrolling) */
+  display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
+/* line 165, ../sass/_underscore.scss */
+.infinity-end.neverending .site-footer {
+  display: block;
+}
+
+/*--------------------------------------------------------------
+12.0 Media
+--------------------------------------------------------------*/
+/* line 174, ../sass/_underscore.scss */
+.page-content img.wp-smiley,
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley {
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0;
+}
+
+/* line 180, ../sass/_underscore.scss */
+.wp-caption {
+  border: 1px solid #ccc;
+  margin-bottom: 1.5em;
+  max-width: 100%;
+}
+
+/* line 185, ../sass/_underscore.scss */
+.wp-caption img[class*="wp-image-"] {
+  display: block;
+  margin: 1.2% auto 0;
+  max-width: 98%;
+}
+
+/* line 190, ../sass/_underscore.scss */
+.wp-caption-text {
+  text-align: center;
+}
+
+/* line 193, ../sass/_underscore.scss */
+.wp-caption .wp-caption-text {
+  margin: 0.8075em 0;
+}
+
+/* line 196, ../sass/_underscore.scss */
+.site-main .gallery {
+  margin-bottom: 1.5em;
+}
+
+/* line 201, ../sass/_underscore.scss */
+.site-main .gallery a img {
+  border: none;
+  height: auto;
+  max-width: 90%;
+}
+
+/* line 207, ../sass/_underscore.scss */
+.site-main .gallery dd,
+.site-main .gallery figcaption {
+  margin: 0;
+}
+
+/* Make sure embeds and iframes fit their containers */
+/* line 217, ../sass/_underscore.scss */
+embed,
+iframe,
+object {
+  max-width: 100%;
+}
+
+/* line 1, ../sass/_grid.scss */
+.grid {
+  margin: 0 auto;
+  max-width: 900px;
+}
+/* line 5, ../sass/_grid.scss */
+.grid:after {
+  /* Or @extend clearfix */
+  content: "";
+  display: table;
+  clear: both;
+}
+@media (max-width: 900px) {
+  /* line 1, ../sass/_grid.scss */
+  .grid {
+    margin: 0 2%;
+  }
+}
+
+/* line 20, ../sass/_grid.scss */
+[class*='col-'] {
+  float: right;
+}
+/* line 24, ../sass/_grid.scss */
+.grid [class*='col-']:last-of-type {
+  padding-right: 0;
+}
+
+/* line 31, ../sass/_grid.scss */
+.col-2-3 {
+  width: 66.66%;
+}
+@media (max-width: 768px) {
+  /* line 31, ../sass/_grid.scss */
+  .col-2-3 {
+    float: none;
+    width: 100%;
+  }
+}
+
+/* line 39, ../sass/_grid.scss */
+.col-1-3 {
+  width: 33.33%;
+}
+@media (max-width: 768px) {
+  /* line 39, ../sass/_grid.scss */
+  .col-1-3 {
+    float: none;
+    width: 100%;
+  }
+}
+
+/* line 49, ../sass/_grid.scss */
+.col-1-2 {
+  width: 50%;
+}
+@media (max-width: 560px) {
+  /* line 49, ../sass/_grid.scss */
+  .col-1-2 {
+    float: none;
+    width: 100%;
+  }
+}
+
+/* line 57, ../sass/_grid.scss */
+.col-1-4 {
+  width: 25%;
+}
+@media (max-width: 560px) {
+  /* line 57, ../sass/_grid.scss */
+  .col-1-4 {
+    float: none;
+    width: 100%;
+  }
+}
+
+/* line 65, ../sass/_grid.scss */
+.col-1-8 {
+  width: 12.5%;
+  min-width: 100px;
+}
+
+/* line 71, ../sass/_grid.scss */
+.module {
+  padding: 20px;
+}
+
+/* Opt-in outside padding */
+/* line 77, ../sass/_grid.scss */
+.grid-pad {
+  padding: 20px 0 20px 20px;
+}
+/* line 79, ../sass/_grid.scss */
+.grid-pad [class*='col-']:last-of-type {
+  padding-right: 20px;
+}
+
+/* line 1, ../sass/_global.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 6, ../sass/_global.scss */
+img {
+  height: auto;
+  /* Make sure images are scaled correctly. */
+  max-width: 100%;
+  /* Adhere to container width. */
+}
+
+/* line 11, ../sass/_global.scss */
+img.attachment-post-thumbnail {
+  width: 100%;
+}
+
+/* line 15, ../sass/_global.scss */
+body {
+  background-color: #fbfbfb;
+}
+
+/* =Global
+----------------------------------------------- */
+/* Text elements */
+/* line 27, ../sass/_global.scss */
+p {
+  margin-bottom: 1.5em;
+}
+
+/* line 30, ../sass/_global.scss */
+ul, ol {
+  margin: 0 0 1.5em 3em;
+}
+
+/* line 33, ../sass/_global.scss */
+ul {
+  list-style: disc;
+}
+
+/* line 36, ../sass/_global.scss */
+ol {
+  list-style: decimal;
+}
+
+/* line 40, ../sass/_global.scss */
+li > ul,
+li > ol {
+  margin-bottom: 0;
+  margin-left: 1.5em;
+}
+
+/* line 44, ../sass/_global.scss */
+dt {
+  font-weight: bold;
+}
+
+/* line 47, ../sass/_global.scss */
+dd {
+  margin: 0 1.5em 1.5em;
+}
+
+/* line 51, ../sass/_global.scss */
+b, strong {
+  font-weight: bold;
+}
+
+/* Text meant only for screen readers */
+/* line 60, ../sass/_global.scss */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+}
+
+/* line 67, ../sass/_global.scss */
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar */
+}
+
+/* line 87, ../sass/_global.scss */
+.site-content {
+  margin-top: 2em;
+}
+
+/* line 105, ../sass/_global.scss */
+#main .fotorama--wp {
+  margin: 0;
+}
+
+/* line 110, ../sass/_global.scss */
+.site-footer {
+  padding: 2em;
+  margin-top: 1em;
+}
+/* line 116, ../sass/_global.scss */
+.site-footer .nav li a {
+  text-transform: uppercase;
+  font-family: "bebas_neueregular", sans-serif;
+  font-weight: normal;
+  color: #fbfbfb;
+  font-size: .9em;
+  display: block;
+  padding: 0 1em;
+}
+
+/* line 133, ../sass/_global.scss */
+.site-title .corner {
+  position: absolute;
+  width: 10%;
+  height: 10%;
+}
+/* line 138, ../sass/_global.scss */
+.site-title .corner.tl {
+  left: 0;
+  top: 0;
+  border-left: 1px solid rgba(51, 51, 51, 0.5);
+  border-top: 1px solid rgba(51, 51, 51, 0.5);
+}
+/* line 145, ../sass/_global.scss */
+.site-title .corner.tr {
+  right: 0;
+  top: 0;
+  border-right: 1px solid rgba(51, 51, 51, 0.5);
+  border-top: 1px solid rgba(51, 51, 51, 0.5);
+}
+/* line 151, ../sass/_global.scss */
+.site-title .corner.bl {
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.5);
+  border-left: 1px solid rgba(51, 51, 51, 0.5);
+}
+/* line 157, ../sass/_global.scss */
+.site-title .corner.br {
+  bottom: 0;
+  right: 0;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.5);
+  border-right: 1px solid rgba(51, 51, 51, 0.5);
+}
+
+/* line 168, ../sass/_global.scss */
+.content-area {
+  position: relative;
+}
+/* line 171, ../sass/_global.scss */
+.content-area .corner {
+  position: absolute;
+  width: 10%;
+  height: 10%;
+}
+/* line 176, ../sass/_global.scss */
+.content-area .corner.tl {
+  left: 0;
+  top: 0;
+  border-left: 1px dashed rgba(51, 51, 51, 0.5);
+  border-top: 1px dashed rgba(51, 51, 51, 0.5);
+}
+/* line 183, ../sass/_global.scss */
+.content-area .corner.tr {
+  right: 0;
+  top: 0;
+  border-right: 1px dashed rgba(51, 51, 51, 0.5);
+  border-top: 1px dashed rgba(51, 51, 51, 0.5);
+}
+/* line 189, ../sass/_global.scss */
+.content-area .corner.bl {
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px dashed rgba(51, 51, 51, 0.5);
+  border-left: 1px dashed rgba(51, 51, 51, 0.5);
+}
+/* line 195, ../sass/_global.scss */
+.content-area .corner.br {
+  bottom: 0;
+  right: 0;
+  border-bottom: 1px dashed rgba(51, 51, 51, 0.5);
+  border-right: 1px dashed rgba(51, 51, 51, 0.5);
+}
+
+/* line 8, ../sass/_layout.scss */
+.frame {
+  width: 100%;
+}
+/* line 13, ../sass/_layout.scss */
+.frame .fotorama--wp {
+  margin: 0;
+}
+
+/* line 18, ../sass/_layout.scss */
+#sidebar {
+  width: 20%;
+  float: left;
+}
+/* line 23, ../sass/_layout.scss */
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+/* line 28, ../sass/_layout.scss */
+#sidebar ul li {
+  text-align: left;
+  margin-bottom: 1em;
+}
+/* line 34, ../sass/_layout.scss */
+#sidebar ul li.current_page_item a {
+  color: #333333;
+  font-family: "bebas_neueregular", sans-serif;
+}
+/* line 39, ../sass/_layout.scss */
+#sidebar ul li.current_page_item a .myArrow {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url(../img/play.svg) top left no-repeat;
+  background-size: 100%;
+}
+/* line 71, ../sass/_layout.scss */
+#sidebar ul li a {
+  display: block;
+  text-decoration: none;
+  font-family: "bebas_neueregular", sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: rgba(51, 51, 51, 0.5);
+}
+/* line 84, ../sass/_layout.scss */
+#sidebar ul li .arrow {
+  font-family: "bebas_neueregular", sans-serif;
+  font-size: 1.5em;
+  display: block;
+  float: right;
+  padding-right: 5em;
+  padding-top: -10px;
+}
+/* line 96, ../sass/_layout.scss */
+#sidebar ul:hover li a {
+  color: #333333;
+}
+
+/* line 1, ../sass/_header.scss */
+.site-header {
+  padding: 0 0 0 0;
+  position: relative;
+  border-top: 5px solid #d40000;
+}
+
+/* line 8, ../sass/_header.scss */
+.site-title {
+  float: left;
+  position: relative;
+  margin-top: .5em;
+}
+/* line 15, ../sass/_header.scss */
+.site-title a {
+  display: block;
+  text-decoration: none;
+  text-align: right;
+  letter-spacing: .25em;
+}
+/* line 35, ../sass/_header.scss */
+.site-title a h1 {
+  font-size: 2em;
+  letter-spacing: 0.1em;
+  color: #d40000;
+}
+/* line 48, ../sass/_header.scss */
+.site-title a h2 {
+  font-family: "bebas_neueregular", sans-serif;
+  color: #333333;
+  font-size: 1em;
+  letter-spacing: 0.1em;
+  padding-top: 10px;
+}
+
+/* -----------------------------------------
+   Typography Styles
+----------------------------------------- */
+/* line 9, ../sass/_typography.scss */
+html,
+body,
+button,
+input,
+select,
+textarea {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  line-height: 1.5em;
+  letter-spacing: 100%;
+  color: #333333;
+}
+
+/* Links */
+/* line 19, ../sass/_typography.scss */
+a {
+  color: royalblue;
+}
+
+/* line 22, ../sass/_typography.scss */
+a:visited {
+  color: royalblue;
+}
+
+/* line 30, ../sass/_typography.scss */
+.no-touch a:hover,
+.no-touch a:focus,
+.no-touch a:active {
+  color: red;
+}
+
+/* line 38, ../sass/_typography.scss */
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* line 43, ../sass/_typography.scss */
+a.active {
+  color: red;
+}
+
+/* heaadings */
+/* line 51, ../sass/_typography.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "bebas_neueregular", sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+/* line 58, ../sass/_typography.scss */
+#main h1 {
+  color: #333333;
+}
+
+/* line 62, ../sass/_typography.scss */
+h1 {
+  font-size: 2em;
+}
+
+/* line 65, ../sass/_typography.scss */
+h2 {
+  font-size: 1.5em;
+}
+
+/* line 69, ../sass/_typography.scss */
+h3 {
+  font-size: 1.3em;
+}
+
+/* line 73, ../sass/_typography.scss */
+h4 {
+  font-size: 1.2em;
+}
+
+/* Text meant only for screen readers */
+/* line 84, ../sass/_typography.scss */
+.assistive-text {
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+}
+
+/* -----------------------------------------
+   Navigation Styles
+----------------------------------------- */
+/* line 6, ../sass/_nav.scss */
+.nav {
+  list-style: none;
+  margin-left: 0;
+}
+/* line 16, ../sass/_nav.scss */
+.nav > li,
+.nav > li > a {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  text-decoration: none;
+}
+/* line 21, ../sass/_nav.scss */
+.nav > li :hover,
+.nav > li > a :hover {
+  text-decoration: none;
+}
+
+/* from underscores style.css = Menu
+----------------------------------------------- */
+/* line 41, ../sass/_nav.scss */
+.main-navigation {
+  display: block;
+  float: right;
+}
+
+/* line 45, ../sass/_nav.scss */
+.main-navigation ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+/* line 51, ../sass/_nav.scss */
+.main-navigation ul ul {
+  display: none;
+  float: left;
+  left: 0;
+  position: absolute;
+  z-index: 99999;
+}
+
+/* line 59, ../sass/_nav.scss */
+.main-navigation ul li:hover > ul {
+  display: block;
+}
+
+/* li styles
+----------------------------------------------- */
+/* line 77, ../sass/_nav.scss */
+#menu-primary > li {
+  float: left;
+  letter-spacing: 0.1em;
+  font-family: "bebas_neueregular", sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+/* line 86, ../sass/_nav.scss */
+#menu-primary > li:first-child {
+  padding-left: 0;
+}
+/* line 90, ../sass/_nav.scss */
+#menu-primary > li > a {
+  padding: .5em 0 0 0;
+  border-top: 4px solid #fbfbfb;
+  display: inline-block;
+  text-decoration: none;
+  color: rgba(51, 51, 51, 0.5);
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.15s;
+  -moz-transition-duration: 0.15s;
+  -o-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+  -webkit-transition-timing-function: ease-in;
+  -moz-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+}
+/* line 106, ../sass/_nav.scss */
+#menu-primary > li > a:hover {
+  border-top: 4px solid #333333;
+  color: #333333;
+}
+/* line 114, ../sass/_nav.scss */
+#menu-primary > li.current-menu-item > a, #menu-primary > li.current-page-ancestor > a {
+  border-top: 4px solid #333333;
+  color: #333333;
+}
+/* line 121, ../sass/_nav.scss */
+#menu-primary > li.on > a {
+  border-top: 4px solid #333333;
+  color: #333333;
+}
+
+/* line 134, ../sass/_nav.scss */
+.sub-menu {
+  list-style: none;
+}
+/* line 138, ../sass/_nav.scss */
+.sub-menu li {
+  float: left;
+  margin-right: 1em;
+}
+/* line 142, ../sass/_nav.scss */
+.sub-menu li > a {
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: .8em;
+  color: rgba(51, 51, 51, 0.5);
+}
+/* line 150, ../sass/_nav.scss */
+.sub-menu li > a:hover {
+  color: #333333;
+}
+/* line 158, ../sass/_nav.scss */
+.sub-menu li.current-menu-item > a, .sub-menu li.current-page-ancestor > a {
+  border-top: none;
+  color: #333333;
+}
+
+/* line 172, ../sass/_nav.scss */
+.navBullets {
+  display: inline-block;
+  margin: 0 25px;
+  color: rgba(51, 51, 51, 0.5);
+}
+
+/* line 187, ../sass/_nav.scss */
+.page-template-page-portfolio-php #menu-primary li > a {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 500ms;
+  -moz-transition-duration: 500ms;
+  -o-transition-duration: 500ms;
+  transition-duration: 500ms;
+}
+/* line 193, ../sass/_nav.scss */
+.page-template-page-portfolio-php ul#menu-primary:hover li > a {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+/* line 197, ../sass/_nav.scss */
+.page-template-page-portfolio-php #menu-primary li > span {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 500ms;
+  -moz-transition-duration: 500ms;
+  -o-transition-duration: 500ms;
+  transition-duration: 500ms;
+}
+/* line 203, ../sass/_nav.scss */
+.page-template-page-portfolio-php ul#menu-primary:hover li > span {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+/* line 210, ../sass/_nav.scss */
+.page-template-page-portfolio-php #menu-primary ul li > a {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+/* line 216, ../sass/_nav.scss */
+.page-template-page-portfolio-php #menu-primary > li:first-child > a {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+/* line 220, ../sass/_nav.scss */
+.page-template-page-portfolio-php .main-navigation ul ul {
+  display: block;
+}
+
+/* Small menu */
+/* line 272, ../sass/_nav.scss */
+.menu-toggle {
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 560px) {
+  /* line 279, ../sass/_nav.scss */
+  .menu-toggle,
+  .main-navigation.toggled .nav-menu {
+    display: block;
+  }
+
+  /* line 283, ../sass/_nav.scss */
+  .main-navigation ul {
+    display: none;
+  }
+  /* line 287, ../sass/_nav.scss */
+  .main-navigation ul li {
+    float: none;
+    width: 100%;
+    text-align: left;
+  }
+  /* line 292, ../sass/_nav.scss */
+  .main-navigation ul li a {
+    padding: .5em 0;
+  }
+}
+/* Sticky Nav */
+/* line 307, ../sass/_nav.scss */
+#site-navigation.fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #999999;
+  z-index: 99999;
+  border-bottom: 1px solid #fbfbfb;
+}
+/* line 316, ../sass/_nav.scss */
+#site-navigation.fixed .menu-toggle {
+  height: 40px;
+}
+/* line 321, ../sass/_nav.scss */
+#site-navigation.fixed ul {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 900px;
+}
+@media (max-width: 900px) {
+  /* line 321, ../sass/_nav.scss */
+  #site-navigation.fixed ul {
+    width: 94%;
+    margin: 0 auto;
+  }
+}
+/* line 336, ../sass/_nav.scss */
+#site-navigation.fixed .menu-toggle {
+  padding-left: 3%;
+}
+
+/* line 345, ../sass/_nav.scss */
+#content.fixed-state {
+  margin-top: 40px;
+}
+
+/* -------------- topNav -------------*/
+/* line 352, ../sass/_nav.scss */
+.topNav {
+  float: right;
+  margin-bottom: 60px;
+  background-color: #8f8f8f;
+  border-left: 1px solid #b4b4b4;
+  border-right: 1px solid #b4b4b4;
+  border-bottom: 1px solid #b4b4b4;
+  -moz-border-radius-bottomleft: 15px;
+  -webkit-border-bottom-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  -moz-border-radius-bottomright: 15px;
+  -webkit-border-bottom-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 0;
+}
+/* line 365, ../sass/_nav.scss */
+.topNav ul.nav {
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+}
+/* line 369, ../sass/_nav.scss */
+.topNav ul.nav li {
+  color: #fbfbfb;
+}
+/* line 371, ../sass/_nav.scss */
+.topNav ul.nav li a {
+  text-transform: uppercase;
+  color: #fbfbfb;
+  padding: .5em .8em;
+}
+/* line 375, ../sass/_nav.scss */
+.topNav ul.nav li a:hover {
+  color: #333333;
+}
+@media (max-width: 1000px) {
+  /* line 352, ../sass/_nav.scss */
+  .topNav {
+    margin-bottom: 20px;
+  }
+}
+
+/* Portfolio Sub-Nav */
+/* line 391, ../sass/_nav.scss */
+.portfolio_subnav {
+  clear: right;
+  position: absolute;
+  right: 0;
+  bottom: 2em;
+  margin: 0 0 0 0;
+  padding: 0;
+}
+/* line 403, ../sass/_nav.scss */
+.portfolio_subnav li.current_page_item a {
+  border-bottom: 5px solid rgba(251, 251, 251, 0.3);
+}
+/* line 408, ../sass/_nav.scss */
+.portfolio_subnav li a {
+  margin-left: 1.5em;
+  text-transform: uppercase;
+  font-family: "bebas_neueregular", sans-serif;
+  font-weight: normal;
+  color: #fbfbfb;
+  font-size: .9em;
+  border-bottom: 5px solid transparent;
+}
+/* line 417, ../sass/_nav.scss */
+.portfolio_subnav li a:hover {
+  border-bottom: 5px solid rgba(251, 251, 251, 0.3);
+}
+
+/* line 440, ../sass/_nav.scss */
+.site-main .comment-navigation,
+.site-main .paging-navigation,
+.site-main .post-navigation {
+  margin: 0 0 1.5em;
+  overflow: hidden;
+}
+
+/* line 446, ../sass/_nav.scss */
+.comment-navigation .nav-previous,
+.paging-navigation .nav-previous,
+.post-navigation .nav-previous {
+  float: left;
+  width: 50%;
+}
+
+/* line 452, ../sass/_nav.scss */
+.comment-navigation .nav-next,
+.paging-navigation .nav-next,
+.post-navigation .nav-next {
+  float: right;
+  text-align: right;
+  width: 50%;
+}
+
+/* from underscores style.css = Navigation
+----------------------------------------------- */
+/* line 461, ../sass/_nav.scss */
+.site-main [class*="navigation"] {
+  margin: 0 0 1.5em;
+  overflow: hidden;
+}
+
+/* line 465, ../sass/_nav.scss */
+[class*="navigation"] .nav-previous {
+  float: left;
+  width: 50%;
+}
+
+/* line 469, ../sass/_nav.scss */
+[class*="navigation"] .nav-next {
+  float: right;
+  text-align: right;
+  width: 50%;
+}
+
+/* line 3, ../sass/_gallery.scss */
+.gallery_intro article {
+  padding-right: 2em;
+}
+
+/* line 9, ../sass/_gallery.scss */
+.gallery {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* clear floats */
+/* line 2, ../sass/_helpers.scss */
+.clearfix:before, .clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+
+/* line 3, ../sass/_helpers.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 4, ../sass/_helpers.scss */
+.clearfix {
+  zoom: 1;
+}
+
+/* line 6, ../sass/_helpers.scss */
+.group:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+/* line 7, ../sass/_helpers.scss */
+.group {
+  display: inline-block;
+  clear: both;
+}
+
+/* start commented backslash hack \*/
+/* line 8, ../sass/_helpers.scss */
+* html .group {
+  height: 1%;
+}
+
+/* line 8, ../sass/_helpers.scss */
+.group {
+  display: block;
+}
+
+/* close commented backslash hack */
+/* line 13, ../sass/_helpers.scss */
+.clear {
+  clear: both;
+}
+
+/* line 18, ../sass/_helpers.scss */
+.cf, .nav {
+  zoom: 1;
+}
+/* line 22, ../sass/_helpers.scss */
+.cf:before, .nav:before, .cf:after, .nav:after {
+  content: " ";
+  display: table;
+}
+/* line 27, ../sass/_helpers.scss */
+.cf:after, .nav:after {
+  clear: both;
+}
+
+/* line 1, ../sass/_test.scss */
+ul.test > li > a {
+  color: red;
+}

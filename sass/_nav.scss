@@ -1,0 +1,473 @@
+/* -----------------------------------------
+   Navigation Styles
+----------------------------------------- */
+
+
+.nav{
+    list-style:none;
+    margin-left:0;
+    @extend .cf;
+
+    > li{
+
+        &.active > a {
+            }        
+        &,
+        > a{
+            display:inline-block;
+           *display:inline;
+            zoom:1;
+            text-decoration:none;
+            :hover {
+                text-decoration:none;
+            }
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* from underscores style.css = Menu
+----------------------------------------------- */
+
+.main-navigation {
+    display: block;
+    float: right;
+}
+.main-navigation ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+.main-navigation ul ul {
+    display: none;
+    float: left;
+    left: 0;
+    position: absolute;
+    z-index: 99999;
+}
+
+.main-navigation ul li:hover > ul {
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+/* li styles
+----------------------------------------------- */
+
+
+
+#menu-primary > li {
+
+    float: left;
+    letter-spacing: $custom-letter-spacing;   
+    font-family:$sub_heading_font;
+    font-weight:normal;
+    text-transform: uppercase;    
+    // padding: 0 1em;
+
+    &:first-child {
+        padding-left: 0;
+    }
+
+   > a {
+        // padding:$body_font_size 0 0 0;
+        padding:.5em 0 0 0;
+        
+        border-top: 4px solid $off_white;
+
+        display: inline-block;
+        // margin-top: -4px;
+        text-decoration: none; 
+        // font-size: .8em;
+
+        color: $body_color_light;  
+          @include transition-property(all);
+          @include transition-duration(0.15s);
+          @include transition-timing-function(ease-in);     
+
+        &:hover {
+            border-top: 4px solid $body_color; 
+            color: $body_color; 
+        }      
+    }
+
+    &.current-menu-item, &.current-page-ancestor   {
+
+        > a {
+            border-top: 4px solid $body_color; 
+            color: $body_color;            
+        }
+    }
+
+    &.on {
+        > a {
+            border-top: 4px solid $body_color; 
+            color: $body_color;             
+        }
+    }
+
+}
+
+
+
+
+
+
+.sub-menu {
+
+    list-style:none;
+
+    li {
+        float: left;
+        margin-right:1em;
+
+       > a {
+            // padding:.5em 2em 1em 0;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: $custom-letter-spacing;
+            font-size: .8em;
+            color: $body_color_light;  
+
+            &:hover {
+                // border-top: none; 
+                color: $body_color; 
+            }
+        }
+
+        &.current-menu-item, &.current-page-ancestor   {
+
+            > a {
+                border-top: none; 
+                color: $body_color;            
+            }
+        }        
+    }
+}
+
+
+
+
+
+
+
+.navBullets {
+    display: inline-block;
+    margin: 0 25px;
+    color: $body_color_light;
+}
+
+
+
+
+
+
+
+
+.page-template-page-portfolio-php {
+
+    #menu-primary li > a {
+        @include opacity(0);
+        @include transition-property(opacity);
+        @include transition-duration(500ms);        
+    }
+
+    ul#menu-primary:hover li > a {
+            @include opacity(1);
+    }
+
+    #menu-primary li > span {
+        @include opacity(0);
+        @include transition-property(opacity);
+        @include transition-duration(500ms);         
+    }
+
+    ul#menu-primary:hover li > span {
+            @include opacity(1);
+    }    
+
+
+
+
+    #menu-primary ul li > a {
+        @include opacity(1);
+    }   
+
+
+
+    #menu-primary > li:first-child > a {
+        @include opacity(1);
+    }
+
+    .main-navigation ul ul {
+        display: block;
+    }    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .main-navigation ul ul ul {
+//     left: 100%;
+//     top: 0;
+// }
+.main-navigation ul ul a {
+    // width: 200px;
+}
+.main-navigation ul ul li {
+}
+.main-navigation li:hover > a {
+}
+.main-navigation ul ul :hover > a {
+}
+.main-navigation ul ul a:hover {
+}
+// .main-navigation ul li:hover > ul {
+//     display: block;
+// }
+.main-navigation .current_page_item a,
+.main-navigation .current-menu-item a {
+}
+
+
+
+
+
+/* Small menu */
+.menu-toggle {
+    cursor: pointer;
+    display: none;
+}
+
+@include breakpoint (baby-bear) {
+    .menu-toggle,
+    .main-navigation.toggled .nav-menu {
+        display: block;
+    }
+
+    .main-navigation ul {
+
+        display: none;
+
+        li {
+            float: none;
+            width: 100%;
+            text-align: left;
+
+            a {
+                padding:.5em 0;
+            }
+        }
+
+    }
+}
+
+
+
+
+
+
+
+/* Sticky Nav */
+#site-navigation.fixed {
+    
+        position:fixed;
+        left:0;
+        top:0;
+        background-color: $wide_bg;
+        z-index: 99999;
+        border-bottom: 1px solid $off_white;
+
+     .menu-toggle {
+        height: 40px;
+     }
+
+
+     ul {
+         // display: block;
+         margin: 0 auto;
+         width:100%;
+         max-width: $max-width;
+         
+
+         @include breakpoint(init) {
+
+            width: 94%;
+            margin: 0 auto;
+
+         }
+     }     
+
+     .menu-toggle {
+        padding-left: 3%;
+     }
+ }
+ 
+
+ 
+
+
+ #content.fixed-state {
+    margin-top:40px;
+ }
+
+
+/* -------------- topNav -------------*/
+
+.topNav {
+    float: right;
+    margin-bottom: 60px;
+    // background-color: $dark_grey;
+    background-color: $dark_grey;
+
+    border-left: 1px solid $light_grey;
+    border-right: 1px solid $light_grey;
+    border-bottom: 1px solid $light_grey;
+    @include border-bottom-left-radius(15px);
+    @include border-bottom-right-radius(15px);
+    padding: 0;
+
+    ul.nav {
+        padding: 0;
+        margin: 0;
+        overflow: auto;
+        li {
+                color: $off_white;
+            a {
+                text-transform: uppercase;
+                color: $off_white;
+                padding: .5em .8em;
+                &:hover {
+                    color: $body_color;
+                }
+            }
+        }        
+    }
+
+    @include breakpoint (tab_port) {
+        margin-bottom: 20px;
+    }
+
+}
+
+
+
+/* Portfolio Sub-Nav */
+.portfolio_subnav {
+    
+    clear: right;
+    position: absolute;
+    right:0;
+    bottom:2em;
+    margin:0 0 0 0;
+    padding:0;
+
+    li {
+        
+        &.current_page_item {
+            a {
+                border-bottom: 5px solid rgba($off_white, 0.3);
+            }
+        }
+
+        a {
+            margin-left: 1.5em;
+            text-transform: uppercase;
+            font-family: $sub_heading_font;
+            font-weight: normal;
+            color: $heading_color;
+            font-size: .9em;
+            border-bottom: 5px solid transparent;
+
+            &:hover {
+               border-bottom: 5px solid rgba($off_white, 0.3); 
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.site-main .comment-navigation,
+.site-main .paging-navigation,
+.site-main .post-navigation {
+    margin: 0 0 1.5em;
+    overflow: hidden;
+}
+.comment-navigation .nav-previous,
+.paging-navigation .nav-previous,
+.post-navigation .nav-previous {
+    float: left;
+    width: 50%;
+}
+.comment-navigation .nav-next,
+.paging-navigation .nav-next,
+.post-navigation .nav-next {
+    float: right;
+    text-align: right;
+    width: 50%;
+}
+
+/* from underscores style.css = Navigation
+----------------------------------------------- */
+
+.site-main [class*="navigation"] {
+    margin: 0 0 1.5em;
+    overflow: hidden;
+}
+[class*="navigation"] .nav-previous {
+    float: left;
+    width: 50%;
+}
+[class*="navigation"] .nav-next {
+    float: right;
+    text-align: right;
+    width: 50%;
+}
