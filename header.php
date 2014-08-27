@@ -28,6 +28,8 @@
 
 <body <?php body_class(); ?>>
 
+	<?php include_once("inc/svg-defs.svg"); ?>
+
 	<div class="grid wrapper">
 
 		<header id="masthead" class="site-header col col-1-4" role="banner">
@@ -51,12 +53,34 @@
 					
 				</nav><!-- #site-navigation -->
 
-				<a id="moreInfo" href="#">More Info &raquo;</a>
-
 			</div>
+
+
+			
+			<?php if(get_field('gallery_intro')): ?>
+
+			<a id="moreInfo" href="#">Info &raquo;</a>	
+				 
+			<?php endif; ?>		
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
 
 		</header><!-- #masthead -->
 
 
 
-	<div id="content" class="site-content col col-3-4">
+	<div id="content" class="site-content col-3-4">

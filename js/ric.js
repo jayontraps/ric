@@ -2,115 +2,43 @@
 
     $(document).ready( function () {
 
-        $.lockfixed(".test",{offset: {top: 10, bottom: 410}});
-
-        $(function() {
-            $('.col').matchHeight();
-        });        
-
-        $('.sub-menu').hover(
-            function() {
-                $this = $(this);
-                $this.parent().addClass('on');
-
-            }, function() {
-                $this.parent().removeClass('on');
-            });
-
-        // var navBullets = $('<span/>', {
-        //     html: '&bull;',
-        //     'class': 'navBullets'
-        // });
-
-        var subMenuTrigger = $('<span/>', {
-            html: '&raquo;',
-            'class': 'subMenuTrigger'
-        });
-
-        // $("#menu-primary > li").prepend(navBullets);
-        var $portfolio_link = $('.portfolio_link > a');
-
-        $portfolio_link.after(subMenuTrigger);
-
-
-        if ($('body').hasClass('page-template-page-portfolio-php')) {
-            $(subMenuTrigger).addClass('rotate');
-        };
-
-        var toggleSubMenu = function(e) {
-            e.preventDefault();
-            $('.sub-menu').slideToggle();
-            subMenuTrigger.toggleClass('rotate');
-        }
-
-        $portfolio_link.on('click', toggleSubMenu);        
-        subMenuTrigger.on('click', toggleSubMenu);
-
-
-        // fade in content on pageload
-        $('#site-navigation, .frame').animate({
-            opacity: 1
-          }, 400);
+        // $.lockfixed(".test",{offset: {top: 10, bottom: 410}});
 
 
 
 
-        // sticky nav  
+    // create equal height ellements on desktop
+    var media_query = window.matchMedia("(min-width: 580px)");
 
-        // var navEll = $("#site-navigation"),
-        //     contEll = $("#content"),
-        //     menuOffset = $('#site-navigation')[0].offsetTop;
-
-
-        // $(document).bind('ready scroll', function() {
-
-        //     var docScroll = $(document).scrollTop();
-
-        //     if (docScroll >= menuOffset) {
-        //         navEll.addClass('fixed');
-        //         contEll.addClass('fixed-state');
-        //     } else {
-        //         navEll.removeClass('fixed');  
-        //         contEll.removeClass('fixed-state');          
-        //     }
-
-        // });
+    if ($('body').hasClass('page-template-page-portfolio-php')) {
+        media_query.addListener(matchElHeights);
+        matchElHeights(media_query);        
+    };
 
 
 
-        // backToTop link
-
-        // $("#backToTop").hide();
-
-        // $(function () {
-        //     $(window).scroll(function () {
-        //         if ($(this).scrollTop() > 100) {
-        //             $('#backToTop').fadeIn();
-        //         } else {
-        //             $('#backToTop').fadeOut();
-        //         }
-        //     });
-
-        //     // scroll body to 0px on click
-        //     $('#backToTop a').click(function () {
-        //         $('body,html').animate({
-        //             scrollTop: 0
-        //         }, 800);
-        //         return false;
-        //     });
-        // }); 
+    function matchElHeights(media_query) {
+      if (media_query.matches) {
+        // $('.col').matchHeight();
+        $('#moreInfo').show(); 
+        $('#moreInfo').removeClass('mob');        
+      } else {
+        // Do stuff..        
+      }
+    }       
 
 
-        // animate scroll to positon
-        
-        // $('#foo').click(function () {
-        //     $('html,body').animate({
-        //         scrollTop: $("#scrollToHere").offset().top
-        //     }, 800);
-        // });
+    
+
+    // fade in content on pageload
+    $('#site-navigation, .frame').animate({
+        opacity: 1
+    }, 400);
 
 
-        // captions
+
+
+
 
 
 
@@ -121,12 +49,18 @@
         .on('fotorama:show fotorama:load', function (e, fotorama) {    
             fotorama.$caption = fotorama.$caption || $(this).next('.fotorama-caption');
             fotorama.$caption.text(fotorama.activeFrame.caption);
-            $('.fotorama-caption').insertAfter('.fotorama__stage').show();           
+
+
+            $('.fotorama-caption').insertAfter('.fotorama__stage').show(); 
+            // set the height of our #masthead based on the height of the stage
+            var stageHeight = fotorama.activeFrame.$stageFrame.height(); 
+            $('#masthead').css('height', stageHeight);
+
         });
 
 
         // Hide the thumbs on load
-        $('.fotorama__nav-wrap').addClass('idle'); 
+        $('.fotorama__nav-wrap').addClass('idle').hide(); 
 
 
         // 1. Initialize fotorama manually.
@@ -135,9 +69,23 @@
         var fotorama = $fotoramaDiv.data('fotorama');
 
         // add our buttons 
-        jQuery("<div class='fotorama_custom__arr fotorama_custom__arr--prev'><</div>").insertBefore(".fotorama__nav-wrap");
-        jQuery("<div class='fotorama_custom__arr fotorama_custom__arr--thumbs'><</div>").insertBefore(".fotorama__nav-wrap");
-        jQuery("<div class='fotorama_custom__arr fotorama_custom__arr--next'>></div>").insertBefore(".fotorama__nav-wrap");
+        // jQuery("<div class='fotorama_custom__arr fotorama_custom__arr--prev'><</div>").insertBefore(".fotorama__nav-wrap");
+        // jQuery("<div class='fotorama_custom__arr fotorama_custom__arr--thumbs'><</div>").insertBefore(".fotorama__nav-wrap");
+        // jQuery("<div class='fotorama_custom__arr fotorama_custom__arr--next'>></div>").insertBefore(".fotorama__nav-wrap");
+
+
+
+        var controls_prev = jQuery("<div class='fotorama_custom__arr fotorama_custom__arr--prev'><svg viewBox='0 0 100 100' class='icon'><use xlink:href='#icon-arrow-left' ></use></svg></div>");
+
+        var controls_thumb = jQuery("<div class='fotorama_custom__arr fotorama_custom__arr--thumbs'><svg viewBox='0 0 100 100' class='icon'><use xlink:href='#icon-ellipsis' ></use></svg></div>");
+
+        var controls_next = jQuery("<div class='fotorama_custom__arr fotorama_custom__arr--next'><svg viewBox='0 0 100 100' class='icon'><use xlink:href='#icon-arrow-left2' ></use></svg></div>");
+
+        $('<div class="control_wrap cf"></div>')
+        .append(controls_prev)
+        .append(controls_thumb)
+        .append(controls_next)
+        .insertBefore(".fotorama__nav-wrap");
 
 
         // make the buttons functionality
@@ -160,106 +108,9 @@
 
         jQuery('.fotorama_custom__arr--thumbs').click(function () {
             $(this).toggleClass('on');
-            $('.fotorama__nav-wrap').toggleClass('idle');
+            $('.fotorama__nav-wrap').toggle().toggleClass('idle');
             // console.log('thumbs clicked');
         });   
-
-
-
-        var getCurrentHeight = function(el) {
-            // currentHeight = $(el).height();
-            // console.log(currentHeight);
-            // $('#masthead').css('height', currentHeight);
-            // return currentHeight;
-        }
-
-        // jQuery(window).on('resize', getCurrentHeight('.fotorama__stage'));
-
-        // getCurrentHeight('.fotorama__stage');        
-
-
-
-
-        // create equal height ellements on desktop
-
-        if ($('body').hasClass('page-template-page-portfolio-php')) {        
-
-
-            function setHeight(mql) {
-                if (mql.matches) {
-
-                    // console.log("big!");
-
-                    $( window ).on('resize.foo load.foo', function() {
-                        currentHeight = $('.fotorama__stage').height();
-                        // console.log(currentHeight);
-                        $('#masthead').css('height', currentHeight);
-                    });
-
-                        $('#moreInfo').show(); 
-                        $('#moreInfo').removeClass('mob');
-
-
-
-                    } else {
-                        // $('#masthead').css('height', "auto");
-                        $( window ).off('resize.foo load.foo');
-                        $('#masthead').css('height', "auto");
-                        $('#moreInfo').addClass('mob');
-                        // console.log("small!");
-
-                }           
-            } 
-
-            // setup matchMedia - fire on min-width: 480px
-            var mql = window.matchMedia("(min-width: 580px)");
-            mql.addListener(setHeight);
-            setHeight(mql);
-
-        }
-
-
-
-
-
-
-
-        //slide out gallery deatils
-        $('#moreInfo').on('click', function(e) {
-            e.preventDefault();
-            $('body').toggleClass('info-state');
-
-
-            if ($(this).hasClass('opened')) {
-                $('.galleryWrap').toggleClass('on');
-                $(this).removeClass('opened');
-                $('.gallery_intro').animate({
-                    left: "-100%",
-                    opacity: 0
-                  }, 400);
-                $(this).html('More Info &raquo;');
-
-                if ($('html').hasClass('no-touch')) {
-                    $('#menu-primary').addClass('idle');
-                }
-
-            } else {
-
-                $(this).addClass('opened');
-                $('.galleryWrap').toggleClass('on');
-                $('.gallery_intro').animate({
-                    left: 0,
-                    opacity: 1
-                  }, 400); 
-                  $(this).html('&laquo; Back to gallery') ;
-
-                if ($('html').hasClass('no-touch')) {
-                    $('#menu-primary').removeClass('idle');
-                }            
-            }        
-        });
-
-
 
 
 
@@ -309,6 +160,71 @@
         );     
 
     });
+
+
+        // var getCurrentHeight = function(el) {
+        //     // currentHeight = $(el).height();
+        //     // console.log(currentHeight);
+        //     // $('#masthead').css('height', currentHeight);
+        //     // return currentHeight;
+        // }
+
+        // // jQuery(window).on('resize', getCurrentHeight('.fotorama__stage'));
+
+        // // getCurrentHeight('.fotorama__stage');        
+
+
+
+
+       
+
+
+
+
+
+
+        //slide out gallery deatils
+        $('#moreInfo').on('click', function(e) {
+            e.preventDefault();
+            $('body').toggleClass('info-state');
+
+
+            if ($(this).hasClass('opened')) {
+                $('.galleryWrap').toggleClass('on');
+                $(this).removeClass('opened');
+                $('.gallery_intro').animate({
+                    left: "-100%",
+                    opacity: 0
+                  }, 400);
+                $(this).html('Info &raquo;');
+
+                if ($('html').hasClass('no-touch')) {
+                    $('#menu-primary').addClass('idle');
+                }
+
+            } else {
+
+                $(this).addClass('opened');
+                $('.galleryWrap').toggleClass('on');
+                $('.gallery_intro').animate({
+                    left: 0,
+                    opacity: 1
+                  }, 400); 
+                  $(this).html('&laquo; Back to gallery') ;
+
+                if ($('html').hasClass('no-touch')) {
+                    $('#menu-primary').removeClass('idle');
+                }            
+            }        
+        });
+
+
+
+
+
+
+
+
 
 })(jQuery);
 
