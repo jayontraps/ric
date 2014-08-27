@@ -27,7 +27,13 @@
 }
 
  
-
+.col-1-3 {
+    width: 33.33%;
+    @include breakpoint( mama-bear) {
+        float:none;
+        width:100%;
+    }    
+}
 .col-2-3 {
     width: 66.66%;
     @include breakpoint( mama-bear) {
@@ -36,14 +42,7 @@
     }    
 }
 
-.col-1-3 {
-    width: 33.33%;
-    @include breakpoint( mama-bear) {
-        float:none;
-        width:100%;
 
-    }    
-}
 
 
 .col-1-2 {
@@ -61,12 +60,6 @@
         width:100%;
     }    
 }
-
-.col-1-8 {
-    width: 12.5%;
-    min-width:100px;
-}
-
 .col-3-4 {
     width: 75%;
     @include breakpoint( baby-bear) {
@@ -74,6 +67,30 @@
         width:100%;
     }    
 }
+
+.col-1-5 {
+    width: 20%;
+    @include breakpoint( baby-bear) {
+        float:none;
+        width:100%;
+    }    
+}
+
+.col-4-5 {
+    width: 80%;
+    @include breakpoint( baby-bear) {
+        float:none;
+        width:100%;
+    }    
+}
+
+
+
+.col-1-8 {
+    width: 12.5%;
+    min-width:100px;
+}
+
 
 
 .module {

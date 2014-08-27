@@ -1,14 +1,14 @@
 .site-header {
-	padding: 0 0 0 0;
-	margin-top:1.2em;
+	padding: 2em 0 0 0;
+	border-top:5px solid $primary_color;
+	margin:0;
 	position: relative;
-	
-	// .test{
-	// 	position: fixed;
-	// 	top:0;
-	// 	left:0;			
-	// }
+}
 
+.home {
+	.site-header {
+		border: none;
+	}
 }
 
 .site-title {
@@ -21,7 +21,7 @@
 
 		h1 {		
 			letter-spacing: $custom-letter-spacing;   
-			color: #d40000;		
+			color: $secondary_color;	
 			font-size: 2.289473684em;
 			// line-height: 1.588235294em;
 			// margin-top: 0.79411765em;

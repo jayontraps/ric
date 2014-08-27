@@ -25,21 +25,23 @@ $heading_color: #fbfbfb; // #999
 $main_heading_color: #999;
 
 // $primary_color: #23A38F;
-$primary_color: #d40000;
+// $primary_color: #d40000;
+$primary_color: rgba(0,0,0,0.25);
+$secondary_color: #d40000;
 
 
 
 
 // fonts and typography
 $body_font : 'PT Sans', sans-serif;
-$body_font_size : 18px;
+$body_font_size : 16px;
 $body_line_height : 1.5em;
 $letter-spacing : 100%;
 $custom-letter-spacing: .01em;
 
 // $heading_font : 'Brandon Grot W01 Black', sans-serif;
 $heading_font : 'bebas_neueregular', sans-serif;
-
+$main_menu_font_size : 20px;
 // $heading_font:'BrandonGrotW01-Regular';
 
 

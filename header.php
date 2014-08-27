@@ -28,59 +28,31 @@
 
 <body <?php body_class(); ?>>
 
-	<?php include_once("inc/svg-defs.svg"); ?>
+	<?php // include_once("inc/svg-defs.svg"); ?>
 
 	<div class="grid wrapper">
 
-		<header id="masthead" class="site-header col col-1-4" role="banner">
+		<header id="masthead" class="site-header col col-1-5" role="banner">	
 
-			<div class="test">
-			
-				<div class="site-title">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>#" rel="home">
-						<h1><?php bloginfo( 'name' ); ?></h1>
-					</a>
-				</div>
-
-				
-				<nav id="site-navigation" class="main-navigation" role="navigation">
-
-					<h1 class="menu-toggle"><span class="navicon"></span></h1>
-
-					<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'ric_bacon' ); ?></a>
-					
-					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-					
-				</nav><!-- #site-navigation -->
-
+			<div class="site-title">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>#" rel="home">
+					<h1><?php bloginfo( 'name' ); ?></h1>
+				</a>
 			</div>
 
-
 			
-			<?php if(get_field('gallery_intro')): ?>
-
-			<a id="moreInfo" href="#">Info &raquo;</a>	
-				 
-			<?php endif; ?>		
-
-
-
-
-
-
-
-
-
-
+			<nav id="site-navigation" class="main-navigation" role="navigation">
+				<h1 class="menu-toggle"><span class="navicon"></span></h1>
+				<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'ric_bacon' ); ?></a>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>					
+			</nav><!-- #site-navigation -->
 		
-
-
-
-
-
+			<?php if(get_field('gallery_intro')): ?>
+				<a id="moreInfo" href="#">Info &raquo;</a>					 
+			<?php endif; ?>		
 
 		</header><!-- #masthead -->
 
 
 
-	<div id="content" class="site-content col-3-4">
+	<div id="content" class="site-content col-4-5">

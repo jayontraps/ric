@@ -7,26 +7,17 @@
 ?>
 
 
+	<?php if ( has_post_thumbnail() ) { the_post_thumbnail();} ?>
 
+	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		
+		<div class="entry-content">				
+			
+			<?php the_content(); ?>
+		
+		</div><!-- .entry-content -->
 
-			<?php if ( has_post_thumbnail() ) { the_post_thumbnail();} ?>
-
-
-
-
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				
-<!-- 				<header class="entry-header">
-					<h2 class="entry-title"><?php the_title(); ?></h2>
-				</header>
- -->
-				<div class="entry-content">				
-					
-					<?php the_content(); ?>
-				
-				</div><!-- .entry-content -->
-
-			</article><!-- #post-## -->
+	</article><!-- #post-## -->
 
 
 

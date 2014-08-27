@@ -110,7 +110,7 @@
     }
 
    > a {
-
+        font-size: $main_menu_font_size;
         text-decoration: none; 
         color: $body_color_light;  
         @include transition-property(all);

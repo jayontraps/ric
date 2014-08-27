@@ -130,7 +130,7 @@ function ric_bacon_scripts() {
 		wp_enqueue_script( 'ric_bacon-max-image', get_template_directory_uri() . '/js/jquery.maximage.min.js', array('jquery'), '20130115', true );	
 	}
 
-	wp_enqueue_script( 'ric_bacon-ric', get_template_directory_uri() . '/js/ric.js', array('jquery'), '20130115', true );
+	wp_enqueue_script( 'ric_bacon-ric', get_template_directory_uri() . '/js/ric.js', array('jquery'), '20140827', true );
 
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
