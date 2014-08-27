@@ -1,11 +1,20 @@
 .site-header {
 	padding: 0 0 0 0;
-	position: relative;	
+	margin-top:1.2em;
+	position: relative;
+	
+	// .test{
+	// 	position: fixed;
+	// 	top:0;
+	// 	left:0;			
+	// }
+
 }
 
 .site-title {
-	position: relative;
-	margin: .5em 0 3em 0;
+	// position: relative;
+	margin: 0 0 3em 0;
+
 	a {
 		display: block;		
 		text-decoration: none;
@@ -13,12 +22,20 @@
 		h1 {		
 			letter-spacing: $custom-letter-spacing;   
 			color: #d40000;		
-			font-size: 1.789473684em;
-			line-height: 1.588235294em;
-			margin-top: 0.79411765em;
+			font-size: 2.289473684em;
+			// line-height: 1.588235294em;
+			// margin-top: 0.79411765em;
 			margin-bottom: 0.79411765em;				
 		}
 
+		@include breakpoint(baby-bear) {
+			display: inline-block;
+		}
+
+	}
+
+	@include breakpoint(baby-bear) {
+		margin: 0;
 	}
 }
 

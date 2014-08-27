@@ -6,16 +6,19 @@
 ?>
 
 
+<div class="galleryWrap">
 
 
-		<div class="frame">
-			<?php the_content(); ?>
-		</div>
+	<div class="frame">
+		<?php the_content(); ?>
+		<p class="fotorama-caption"></p>
+	</div>
 
 
 
-<!-- 
-	<div class="col-1-2 gallery_intro">
+
+
+	<div class="gallery_intro">
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
@@ -37,6 +40,9 @@
 		</article>
 
 	</div>
- -->
+
+
+</div>
+
 
 

@@ -1,7 +1,66 @@
+.page-template-page-portfolio-php {
+	#content {
+		padding-top:1.2em;
+	}
+}
+
+.galleryWrap {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	&.on {
+		overflow: visible;
+	}
+
+}
+
+.frame {
+	// margin-top: 1.2em;
+	width:100%;
+	@include opacity(0);
+	// padding:5px;
+	// background-color: rgba($light_grey, 0.5);
+
+	.fotorama--wp {
+		margin: 0;
+	}
+}
+
+
 .gallery_intro {
+	width: 100%;
+	min-height: 100%;
+	background-color: $bg;
+	border-left: 1px solid $body_color_light;
+	position: absolute;
+	top: 0;
+	left:-100%;
+	@include opacity(0);
+
+	@include breakpoint(baby-bear) {
+		border: none;
+	}	
+
 
 	article {
-		padding-right:2em;
+		padding:2em 4em;
+
+		@include breakpoint(baby-bear) {
+			padding: 2em 0;
+		}
+
+		.entry-content {
+
+			// @include column-count(2);
+			// @include column-gap(50px);
+
+			// @include breakpoint(mama-bear) {
+			// 	@include column-count(1);
+			// 	// @include column-gap(1);					
+			// }				
+
+		}
+		
 	}
 	
 }
@@ -11,5 +70,228 @@
 	max-width:960px;
 	margin: 0 auto;
 }
+
+#moreInfo {
+	display:none;
+	// position: absolute;
+	// bottom: 0;
+	// left:0;
+	text-decoration: none;
+	font-family: $heading_font;
+	font-size:1em;
+	line-height:1em;
+	color: $primary_color;
+
+	&.mob {
+		bottom:-1.2em;
+	}
+	@include breakpoint(baby-bear) {
+		padding-bottom: 1em;
+	}
+}
+
+.page-template-page-portfolio-php  {
+	#moreInfo {
+		@include breakpoint(baby-bear) {
+			display:block;
+		}
+	}
+}
+
+
+.fotorama--wp {
+	margin: 0;	
+
+	.fotorama__nav__frame {
+		@include opacity(0.6);
+
+		&.fotorama__active {
+			@include opacity(0.9);
+		}
+	}
+
+	.fotorama__caption {
+		display: none;
+		// font-family: $body_font;
+		// font-size: 15px;
+		// color: red;
+		// line-height: 1em;
+		// bottom: 0;
+	}
+		
+	// .fotorama__wrap {
+	// 	position: static;
+
+	// 	.fotorama__nav-wrap {
+	// 		position: absolute;
+	// 		bottom: 0;
+	// 		left: -70%;
+	// 		border: 1px solid red;
+
+	// 	}
+	// }
+}	
+
+
+.fotorama__thumb-border {
+	border-color: $primary_color;
+}
+
+.fotorama__nav-wrap {
+	clear: both;
+	margin-top: .5em;
+	@include opacity(1);
+    @include transition-property(all);
+    @include transition-duration(0.8s);
+    @include transition-timing-function(ease-in);    		
+
+	&.idle {
+		@include opacity(0);
+	}
+}
+
+
+
+
+.fotorama-caption {
+	display: none;
+	width: 75%;
+	height: 40px;
+	float:right;
+	margin: 0;
+	padding-top:10px;
+	text-align: right;
+	color: $body_color_light;
+	font-size: .9em;
+	@include breakpoint(mama-bear) {
+		width: 100%;
+		text-align: left;
+		height: auto;
+	}
+}
+
+
+.fotorama_custom__arr {
+	width:50px;
+	height: 50px;
+	float: left;
+	text-indent: -99999px;
+	background: url('../img/gallery-nav2.png') no-repeat;
+
+	@include breakpoint(mama-bear) {
+		width:33.3%;
+		// background-image
+		// margin-left: 23%;
+		// &:nth-child(3) {
+		// 	margin-left: 0;
+		// 	// float: right;
+		// }
+		// &:nth-child(5) {
+		// 	float: right;
+		// }
+	}
+
+	@include opacity(.5);
+    @include transition-property(all);
+    @include transition-duration(250ms);
+    @include transition-timing-function(ease-in);  
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	// &.disable {
+	// 	background-image: none;
+	// 	cursor: default;
+	// }
+
+	&.fotorama_custom__arr--prev {
+		background-position: -150px 0;
+
+		@include breakpoint(mama-bear) {
+			background-image: url(../img/arr-left.png);
+			background-position:0 50%;
+		}		
+		// &:hover {
+		// 	// background-position: -50px -50px ;
+		// 	@include opacity(1);
+		// }
+
+	}
+	&.fotorama_custom__arr--thumbs {
+		background-position: -5px 0;
+		// &:hover {
+		// 	// background-position: 0 -50px ;
+		// 	@include opacity(1);
+		// }
+		&.on {
+			@include opacity(1);
+		}
+
+		@include breakpoint(mama-bear) {
+			background-image: url(../img/thumbs.png);
+			background-position:50% 50%;
+		}
+
+	}
+
+	&.fotorama_custom__arr--next {
+		background-position: -300px 0;
+		// &:hover {
+		// 	// background-position: -100px -50px ;
+		// 	@include opacity(1);
+		// }
+
+		@include breakpoint(mama-bear) {
+			background-image: url(../img/arr-right.png);
+			background-position:100% 50%;
+		}		
+
+	}
+
+}
+
+
+
+
+.no-touch {
+	.fotorama_custom__arr {
+		&.fotorama_custom__arr--prev {
+			&:hover {
+				@include opacity(1);
+			}
+
+		}
+		&.fotorama_custom__arr--thumbs {
+			&:hover {
+				@include opacity(1);
+			}
+		}
+		&.fotorama_custom__arr--next {
+			
+			&:hover {
+				@include opacity(1);
+			}
+
+		}
+
+	}	
+}
+
+
+
+.fullscreen {
+	.fotorama-caption, .fotorama_custom__arr, .fotorama__nav-wrap	 {
+		display: none;
+	}
+}
+
+
+
+
+
+
+
+
 
 

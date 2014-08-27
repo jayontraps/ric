@@ -14,12 +14,18 @@ img.attachment-post-thumbnail {
 
 body {
 	background-color:$off_white;
+	// background-image: url(../img/tiny_grid.png) ;
+	// background-size:20%;
 	// background: url(../img/lil_fiber.png) $off_white;
 	// background: url(../img/classy_fabric.png) $dark;
 }
 
 .wrapper {
 	border-top:5px solid $primary_color;
+}
+
+#main {
+	margin-bottom: 6em;
 }
 
 
@@ -71,17 +77,19 @@ body {
 
 
 #main {
+	// position: relative;
 
-	.fotorama--wp {
-		margin: 0;
-	}	
-	.fotorama__thumb-border {
-		border-color: $primary_color;
-	}
-	.fotorama__nav-wrap {
-		margin-top: 1em;
-	}
+
+
+
 }
+
+
+
+
+
+
+
 
 .site-footer {
 	padding:2em;

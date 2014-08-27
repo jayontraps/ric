@@ -61,6 +61,7 @@
     @include transition-property(all);
     @include transition-duration(0.5s);
     @include transition-timing-function(ease-in);    
+
 }
 
 .main-navigation {
@@ -81,13 +82,32 @@
 
 /* li styles
 ----------------------------------------------- */
+#menu-primary {
+    @include opacity(1);
+    @include transition-property(all);
+    @include transition-duration(0.8s);
+    @include transition-timing-function(ease-in);      
+    &.idle {
+        @include opacity(0);
+    }   
 
+    @include breakpoint(baby-bear) {
+        padding-bottom: 2em;
+    } 
+}
 
 
 #menu-primary > li {
     letter-spacing: $custom-letter-spacing;   
     font-family:$heading_font;
     font-weight:normal;
+
+    &.portfolio_link {
+        margin-bottom: 3em;
+        @include breakpoint(baby-bear) {
+            margin-bottom: 0;
+        }
+    }
 
    > a {
 
@@ -124,12 +144,6 @@
 
 }
 
-#menu-primary > li {
-    // margin-bottom: .5em;
-} 
-
-
-
 
 
 
@@ -138,11 +152,9 @@
 
     .sub-menu {
         display: none;
-
-        margin: .5em 0 0 7em;
+        margin: 0;
 
         li {
-
            > a {
                 text-decoration: none;
                 text-transform: uppercase;
@@ -303,7 +315,32 @@
 .menu-toggle {
     cursor: pointer;
     display: none;
+    position: absolute;
+    right:.5em;
+    top:.0;
+
+    span.navicon {
+        position: absolute;
+        right:5px;
+        top:10px;
+        width: 25px;
+        height: 20px;
+        background: url(../img/nav.png) -30px 0 no-repeat;
+    }  
 }
+
+.homepage {
+    span.navicon {
+        background-position: 0 0;
+    }
+
+    #menu-primary > li.on > a {
+        color: #fff;
+    }
+
+}
+
+
 
 @include breakpoint (baby-bear) {
     .menu-toggle,
@@ -321,7 +358,8 @@
             text-align: left;
 
             a {
-                padding:.5em 0;
+                padding:1em 0;
+
             }
         }
 
