@@ -136,17 +136,9 @@
 
 		<header id="masthead" class="site-header col-1-4" role="banner">
 			
-
 			<div class="site-title">
-<!-- 				<div class="corner tl"></div>
-				<div class="corner tr"></div>
-				<div class="corner bl"></div>
-				<div class="corner br"></div> -->
-
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>#" rel="home">
 					<h1><?php bloginfo( 'name' ); ?></h1>
-
-				<!-- 	<h2>Photography</h2> -->
 				</a>
 			</div>
 
@@ -156,43 +148,7 @@
 			</div>
 			
 
-<!-- 			
 
-			<nav id="site-navigation" class="main-navigation" role="navigation">
-
-				<h1 class="menu-toggle"><span class="navicon"></span></h1>
-				
-				<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'ric_bacon' ); ?></a>
-				
-				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-				
-			</nav>
-
-
- -->
-
-	<!-- 			<ul class="nav portfolio_subnav">
-					<li class="page_item page-item-58 current_page_item"><a href="#">miscellaneous</a></li>
-					<li class="page_item page-item-60"><a href="#">performers</a></li>
-					<li class="page_item page-item-55"><a href="#">Headshots</a></li>
-				</ul> -->
-
-
-
-
-
-
-<!-- 				<?php
-				if($post->post_parent)
-				$children = wp_list_pages("title_li=&child_of=".$post->post_parent."&echo=0");
-				else
-				$children = wp_list_pages("title_li=&child_of=".$post->ID."&echo=0");
-				if ($children) { ?>
-				<ul class="nav portfolio_subnav">
-				<?php echo $children; ?>
-				</ul>
-				<?php } ?>
- -->
 		</header><!-- #masthead -->
 
 

@@ -114,7 +114,9 @@ add_action( 'widgets_init', 'ric_bacon_widgets_init' );
 function ric_bacon_scripts() {
 
 
-	wp_enqueue_style( 'ric_bacon-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'ric_bacon-style-definition', get_stylesheet_uri());
+
+	wp_enqueue_style( 'ric_bacon-style', get_template_directory_uri() . '/css/screen.css', array(), '20140910' );
 
 	wp_enqueue_script( 'ric_bacon-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
@@ -130,7 +132,7 @@ function ric_bacon_scripts() {
 		wp_enqueue_script( 'ric_bacon-max-image', get_template_directory_uri() . '/js/jquery.maximage.min.js', array('jquery'), '20130115', true );	
 	}
 
-	wp_enqueue_script( 'ric_bacon-ric', get_template_directory_uri() . '/js/ric.js', array('jquery'), '20140827', true );
+	wp_enqueue_script( 'ric_bacon-ric', get_template_directory_uri() . '/js/ric.js', array('jquery'), '20140910', true );
 
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

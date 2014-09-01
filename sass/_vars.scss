@@ -1,5 +1,5 @@
 // layout
-$max-width: 1200px;
+$max-width: 1280px;
 
 
 
@@ -23,7 +23,7 @@ $dark: #202020;
 $heading_color: #fbfbfb; // #999
 
 $main_heading_color: #999;
-
+// 
 // $primary_color: #23A38F;
 // $primary_color: #d40000;
 $primary_color: rgba(0,0,0,0.25);
@@ -34,6 +34,9 @@ $secondary_color: #d40000;
 
 // fonts and typography
 $body_font : 'PT Sans', sans-serif;
+
+// $body_font: 'News Cycle', sans-serif;
+
 $body_font_size : 16px;
 $body_line_height : 1.5em;
 $letter-spacing : 100%;

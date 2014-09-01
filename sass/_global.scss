@@ -12,18 +12,29 @@ img.attachment-post-thumbnail {
 	width: 100%;
 }
 
-body {
-	background-color:$off_white;
+html, body {
+	// background-color:$off_white;
+	background-color:whitesmoke;
+	height: 100%;
 	// background-image: url(../img/tiny_grid.png) ;
 	// background-size:20%;
 	// background: url(../img/lil_fiber.png) $off_white;
 	// background: url(../img/classy_fabric.png) $dark;
+	&.home {
+		background-color: transparent;
+		.wrapper {
+			background-color: transparent;
+		}
+	}
 }
 
 .wrapper {
 	// border-top:5px solid $primary_color;
 	// padding-top: 1em;
 	margin-bottom: 3em;
+	background-color:$off_white;
+	height: 100%;
+	// padding:0 2em;
 }
 
 .site-content  {

@@ -8,22 +8,23 @@
 
 
     // create equal height ellements on desktop
-    var media_query = window.matchMedia("(min-width: 580px)");
+    var media_query = window.matchMedia("(min-width: 770px)");
 
     if ($('body').hasClass('page-template-page-portfolio-php')) {
         media_query.addListener(matchElHeights);
         // matchElHeights(media_query);        
-    };
+    }
 
 
 
     function matchElHeights(media_query, stageHeight) {
       if (media_query.matches) {
+        stageHeight = fotorama.activeFrame.$stageFrame.height(); 
         $('#masthead').css('height', (stageHeight + 32));
         $('#moreInfo').show(); 
         $('#moreInfo').removeClass('mob');        
       } else {
-        // Do stuff..        
+        $('#masthead').css('height', 'auto');    
       }
     }       
 
@@ -45,7 +46,7 @@
 
         $('.fotorama-caption').insertAfter('.fotorama__stage').show(); 
         // set the height of our #masthead based on the height of the stage
-        var stageHeight = fotorama.activeFrame.$stageFrame.height(); 
+        var stageHeight = ""; 
 
         matchElHeights(media_query, stageHeight);  
 
@@ -185,7 +186,7 @@
                     left: "-100%",
                     opacity: 0
                   }, 400);
-                $(this).html('Info &raquo;');
+                $(this).html('Info&nbsp;&nbsp;&raquo;');
 
                 if ($('html').hasClass('no-touch')) {
                     $('#menu-primary').addClass('idle');
@@ -199,19 +200,13 @@
                     left: 0,
                     opacity: 1
                   }, 400); 
-                  $(this).html('&laquo; Back to gallery') ;
+                  $(this).html('&laquo;&nbsp;&nbsp;Back to gallery') ;
 
                 if ($('html').hasClass('no-touch')) {
                     $('#menu-primary').removeClass('idle');
                 }            
             }        
         });
-
-
-
-
-
-
 
 
 
@@ -292,7 +287,7 @@ idleWait = 3000;
 
 
 
-}) (jQuery)
+}) (jQuery);
 
 
 

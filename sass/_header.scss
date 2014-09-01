@@ -5,6 +5,16 @@
 	position: relative;
 }
 
+.head-wrap {
+	position: absolute;
+	top:2em;
+	bottom:0;
+	padding-left:1em;
+	@include breakpoint(baby-bear) {
+		position: initial;
+	}
+}
+
 .home {
 	.site-header {
 		border: none;

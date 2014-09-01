@@ -15,7 +15,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link type="text/css" rel="stylesheet" href="http://fast.fonts.net/cssapi/794f35db-1827-4153-93e2-2b81664ba14c.css"/>
-<link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=News+Cycle|PT+Sans' rel='stylesheet' type='text/css'>
 <?php wp_head(); ?>
 
 
@@ -32,7 +32,9 @@
 
 	<div class="grid wrapper">
 
-		<header id="masthead" class="site-header col col-1-5" role="banner">	
+		<header id="masthead" class="site-header col col-1-5" role="banner">
+
+		<div class="head-wrap">
 
 			<div class="site-title">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>#" rel="home">
@@ -48,8 +50,10 @@
 			</nav><!-- #site-navigation -->
 		
 			<?php if(get_field('gallery_intro')): ?>
-				<a id="moreInfo" href="#">Info &raquo;</a>					 
+				<a id="moreInfo" href="#">Info&nbsp;&nbsp;&raquo;</a>					 
 			<?php endif; ?>		
+
+			</div>	
 
 		</header><!-- #masthead -->
 

@@ -20,7 +20,7 @@
   }
 
   @else if $point == baby-bear {
-    @media (max-width: 560px)  { @content; }
+    @media (max-width: 768px)  { @content; }
   }
 
 
