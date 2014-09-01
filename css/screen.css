@@ -687,7 +687,7 @@ html.home .wrapper, body.home .wrapper {
   position: absolute;
   top: 2em;
   bottom: 0;
-  padding-left: 1em;
+  padding-left: 2em;
 }
 @media (max-width: 768px) {
   /* line 8, ../sass/_header.scss */
@@ -1215,7 +1215,7 @@ p, ul, ol, pre, table, blockquote {
 
 /* line 2, ../sass/_gallery.scss */
 .page-template-page-portfolio-php #content {
-  padding: 2em 1em 0 0;
+  padding: 2em 2em 0 0;
 }
 @media (max-width: 768px) {
   /* line 2, ../sass/_gallery.scss */
