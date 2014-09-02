@@ -6,27 +6,7 @@
 get_header("home"); ?>
 
 	<div id="primary" class="content-area">
-<!-- 
-				<div class="corner tl"></div>
-				<div class="corner tr"></div>
-				<div class="corner bl"></div>
-				<div class="corner br"></div> -->
-
-
-<!-- 			<div id="sidebar">
-				
-				<ul>
-					
-					<li class="page_item page-item-55 current_page_item"><a href="#"><span class="myArrow"></span> Film Stills</a></li>
-					<li class="page_item page-item-60"><a href="#">Headshots</a></li>
-					
-					<li class="page_item page-item-58 "><a href="#">miscellaneous</a></li>
-				</ul>			
-		
-
-			</div> -->
-			
-			
+						
 			<main id="main" class="site-main" role="main">
 
 				<?php while ( have_posts() ) : the_post(); ?>

@@ -22,86 +22,11 @@
 
 <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/jquery.maximage.min.css" type="text/css" media="screen" title="CSS" charset="utf-8" />
 
-<style type="text/css">
-	body {
-		background-color: #000;
-	}
-</style>
+
 
 </head>
 
 <body <?php body_class(); ?>>
-
-	<!-- <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/Nel Dinner Party_rude 4.jpg">
- -->
-<script type="text/javascript">
-
-	$(function(){		
-
-		$(document).ready(function() {
-
-			$('#maximage').fadeIn('slow');
-
-
-		    var imgs = $('#maximage img');
-		    imgs.sort(function() { return 0.5 - Math.random() });
-		    $('#maximage').html( imgs );
-
-
-			// Trigger maximage
-			jQuery('#maximage').maximage({
-				cycleOptions: {
-					fx: 'fade',
-					// // Speed has to match the speed for CSS transitions
-					// speed: 1000, 
-					// timeout: 0,
-					prev: '#arrow_left',
-					next: '#arrow_right'
-				},
-
-				onFirstImageLoaded: function(){
-					jQuery('#cycle-loader').hide();
-					jQuery('#maximage').fadeIn('fast');
-				},
-
-
-			});
-
-
-		});
-
-
-
-	// $('#maximage').maximage({
-	// 	cycleOptions: {
-	// 		fx: 'fade',
-	// 		// Speed has to match the speed for CSS transitions
-	// 		speed: 1000, 
-	// 		timeout: 0,
-	// 		prev: '#arrow_left',
-	// 		next: '#arrow_right',
-	// 		pause: 1
-	// 	},
-	// 	onFirstImageLoaded: function(){
-	// 		jQuery('#cycle-loader').hide();
-	// 		jQuery('#maximage').fadeIn('fast');
-	// 	},
-	// 	// cssBackgroundSize might be causing choppiness in retina display safari
-	// 	cssBackgroundSize: false 
-	// });	
-
-
-
-
-
-	});
-
-
-</script>
-
-
-
-
 
 
 
@@ -119,9 +44,7 @@
 
 <a href="" id="arrow_right"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/arrow_right.png" alt="Slide Right"></a>
 
-<!-- 
-	<a href="" id="arrow_left">PREV</a>
-	<a href="" id="arrow_right">NEXT</a>	 -->
+
 
 </div>
 

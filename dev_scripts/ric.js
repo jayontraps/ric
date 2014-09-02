@@ -210,8 +210,6 @@
             }        
         });
 
-
-
 })(jQuery);
 
 
@@ -226,8 +224,8 @@
 
 
 
-
-
+ 
+// timer Listening for mouse idle
 
 idleTimer = null;
 idleState = false;
@@ -241,7 +239,6 @@ idleWait = 3000;
 
         if ($('body').hasClass('page-template-page-portfolio-php') && $('html').hasClass('no-touch')) {
 
-            // $('#').bind('mousemove keydown scroll', function () {
             $nav_wrap.bind('mousemove keydown scroll', function () {                
             
                 clearTimeout(idleTimer);
@@ -272,7 +269,6 @@ idleWait = 3000;
 
 
             // fade out navigation on hover
-            // var controls = $('.fotorama__stage, .fotorama-caption, .fotorama_custom__arr ');
             var controls = $('.frame');            
             controls.hover(function() {
                 $nav_wrap.addClass('idle');
@@ -280,16 +276,83 @@ idleWait = 3000;
                 $nav_wrap.removeClass('idle');
             });
 
-
         }
-
     
     });
 
-
-
-
 }) (jQuery);
+
+
+
+
+
+// http://css-tricks.com/snippets/jquery/shuffle-dom-elements/ - random img order on load
+// fire maximage plugin
+(function($){
+ 
+    $.fn.shuffle = function() {
+ 
+        var allElems = this.get(),
+            getRandom = function(max) {
+                return Math.floor(Math.random() * max);
+            },
+            shuffled = $.map(allElems, function(){
+                var random = getRandom(allElems.length),
+                    randEl = $(allElems[random]).clone(true)[0];
+                allElems.splice(random, 1);
+                return randEl;
+           });
+ 
+        this.each(function(i){
+            $(this).replaceWith($(shuffled[i]));
+        });
+ 
+        return $(shuffled);
+ 
+    };
+
+
+
+
+
+    $(document).ready(function() {
+
+        $('#maximage img').shuffle();
+
+        $('#maximage').fadeIn('slow');
+
+        // var imgs = $('#maximage img');
+        // imgs.sort(function() { return 0.5 - Math.random() });
+        // $('#maximage').html( imgs );
+
+
+        // Trigger maximage
+        jQuery('#maximage').maximage({
+            cycleOptions: {
+                fx: 'fade',
+                // // Speed has to match the speed for CSS transitions
+                // speed: 1000, 
+                // timeout: 0,
+                prev: '#arrow_left',
+                next: '#arrow_right'
+            },
+
+            onFirstImageLoaded: function(){
+                jQuery('#cycle-loader').hide();
+                jQuery('#maximage').fadeIn('fast');
+            },
+
+        });
+
+    });
+
+   
+})(jQuery);
+
+
+
+
+ 
 
 
 
