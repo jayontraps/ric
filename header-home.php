@@ -14,16 +14,9 @@
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<link type="text/css" rel="stylesheet" href="http://fast.fonts.net/cssapi/794f35db-1827-4153-93e2-2b81664ba14c.css"/>
 <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
 <?php wp_head(); ?>
-
 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/modernizr.custom.08020.js"></script>
-
-<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/jquery.maximage.min.css" type="text/css" media="screen" title="CSS" charset="utf-8" />
-
-
-
 </head>
 
 <body <?php body_class(); ?>>
@@ -31,10 +24,12 @@
 
 
 <div id="maximage" style="display: none">
-	<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/India_Tailor_figure in doorway_0503.jpg" />
-	<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/Nel Dinner Party_rude 4.jpg" />
+	<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/Army_boys_car.jpg" />
+	<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/Katie_Brayben_compressor.jpg" />
+	<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/India_Tailor_figure.jpg" />
+	<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/Nel_Dinner_Party_rude4.jpg" />
 	<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/IMG_8153.jpg" />
-	<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/Daran Theron _ Table Mountain 1copy.jpg" />
+	<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/Daran_Theron_Table_Mountain.jpg" />
 
 </div>
 

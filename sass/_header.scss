@@ -5,15 +5,15 @@
 	position: relative;
 }
 
-.head-wrap {
-	position: absolute;
-	top:2em;
-	bottom:0;
-	padding-left:2em;
-	@include breakpoint(baby-bear) {
-		position: initial;
-	}
-}
+// .head-wrap {
+// 	position: absolute;
+// 	top:2em;
+// 	bottom:0;
+// 	// padding-left:2em;
+// 	@include breakpoint(baby-bear) {
+// 		position: initial;
+// 	}
+// }
 
 .home {
 	.site-header {

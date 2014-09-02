@@ -391,7 +391,7 @@ object {
 /* line 1, ../sass/_grid.scss */
 .grid {
   margin: 0 auto;
-  max-width: 1280px;
+  max-width: 1200px;
 }
 /* line 5, ../sass/_grid.scss */
 .grid:after {
@@ -400,7 +400,7 @@ object {
   display: table;
   clear: both;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1200px) {
   /* line 1, ../sass/_grid.scss */
   .grid {
     margin: 0 2%;
@@ -558,7 +558,6 @@ html.home .wrapper, body.home .wrapper {
 /* line 31, ../sass/_global.scss */
 .wrapper {
   margin-bottom: 3em;
-  background-color: #FFF;
   height: 100%;
 }
 
@@ -680,20 +679,6 @@ html.home .wrapper, body.home .wrapper {
   border-top: 5px solid rgba(0, 0, 0, 0.25);
   margin: 0;
   position: relative;
-}
-
-/* line 8, ../sass/_header.scss */
-.head-wrap {
-  position: absolute;
-  top: 2em;
-  bottom: 0;
-  padding-left: 2em;
-}
-@media (max-width: 768px) {
-  /* line 8, ../sass/_header.scss */
-  .head-wrap {
-    position: initial;
-  }
 }
 
 /* line 19, ../sass/_header.scss */
@@ -1215,7 +1200,7 @@ p, ul, ol, pre, table, blockquote {
 
 /* line 2, ../sass/_gallery.scss */
 .page-template-page-portfolio-php #content {
-  padding: 2em 2em 0 0;
+  padding: 2em 0 0 0;
 }
 @media (max-width: 768px) {
   /* line 2, ../sass/_gallery.scss */
