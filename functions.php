@@ -116,7 +116,7 @@ function ric_bacon_scripts() {
 
 	wp_enqueue_style( 'ric_bacon-style-definition', get_stylesheet_uri());
 
-	wp_enqueue_style( 'ric_bacon-style', get_template_directory_uri() . '/css/screen.css', array(), '20140911' );
+	wp_enqueue_style( 'ric_bacon-style', get_template_directory_uri() . '/css/screen.css', array(), '676875' );
 
 	wp_enqueue_style( 'ric_bacon-maximage', get_template_directory_uri() . '/css/jquery.maximage.min.css', array(), '20140910' );
 

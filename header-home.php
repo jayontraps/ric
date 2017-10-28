@@ -22,16 +22,23 @@
 <body <?php body_class(); ?>>
 
 
-
 <div id="maximage" style="display: none">
-	<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/Army_boys_car.jpg" />
-	<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/Katie_Brayben_compressor.jpg" />
-	<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/India_Tailor_figure.jpg" />
-	<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/Nel_Dinner_Party_rude4.jpg" />
-	<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/IMG_8153.jpg" />
-	<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/Daran_Theron_Table_Mountain.jpg" />
+	<?php
+	// check if the repeater field has rows of data
+	if( have_rows('slides') ):
+	 	// loop through the rows of data
+	    while ( have_rows('slides') ) : the_row();
+	        // display a sub field value
+	        $image = get_sub_field('image');
 
+	        ?>
+
+			<img src="<?php echo $image['url']; ?>" />
+
+	    <?php endwhile; endif; ?>
 </div>
+
+
 
 <div class="home-slide-nav">
 

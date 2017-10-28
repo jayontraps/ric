@@ -168,6 +168,12 @@
 
 
 
+    $('.fotorama').on('fotorama:fullscreenenter', function() {
+        console.log("full");
+    });
+
+
+
        
 
 

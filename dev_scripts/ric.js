@@ -4,174 +4,125 @@
 
         "use strict";
 
-        // $.lockfixed('.test',{offset: {top: 10, bottom: 410}});
+        // create equal height ellements on desktop
+        var media_query = window.matchMedia('(min-width: 770px)');
+
+        if ($('body').hasClass('page-template-page-portfolio-php')) {
+            media_query.addListener(matchElHeights);
+            // matchElHeights(media_query);        
+        }
 
 
-
-
-    // create equal height ellements on desktop
-    var media_query = window.matchMedia('(min-width: 770px)');
-
-    if ($('body').hasClass('page-template-page-portfolio-php')) {
-        media_query.addListener(matchElHeights);
-        // matchElHeights(media_query);        
-    }
-
-
-
-    function matchElHeights(media_query, stageHeight) {
-      if (media_query.matches) {
-        stageHeight = fotorama.activeFrame.$stageFrame.height(); 
-        $('#masthead').css('height', (stageHeight + 32));
-        $('#moreInfo').show(); 
-        $('#moreInfo').removeClass('mob');        
-      } else {
-        $('#masthead').css('height', 'auto');    
-      }
-    }       
-
+        function matchElHeights(media_query, stageHeight) {
+          if (media_query.matches) {
+            stageHeight = fotorama.activeFrame.$stageFrame.height(); 
+            $('#masthead').css('height', (stageHeight + 32));
+            $('#moreInfo').show(); 
+            $('#moreInfo').removeClass('mob');        
+          } else {
+            $('#masthead').css('height', 'auto');    
+          }
+        }       
 
     
-
-    // fade in content on pageload
-    $('#site-navigation, .frame').animate({
-        opacity: 1
-    }, 400);
-
+        // fade in content on pageload
+        $('#site-navigation, .frame').animate({
+            opacity: 1
+        }, 400);
 
 
-    $('.fotorama')
-    .on('fotorama:show fotorama:load', function (e, fotorama) {    
-        fotorama.$caption = fotorama.$caption || $(this).next('.fotorama-caption');
-        fotorama.$caption.text(fotorama.activeFrame.caption);
-
-
-        $('.fotorama-caption').insertAfter('.fotorama__stage').show(); 
-        // set the height of our #masthead based on the height of the stage
-        var stageHeight = ''; 
-
-        matchElHeights(media_query, stageHeight);  
-
-        console.log(stageHeight);
-
-        // $('#masthead').css('height', stageHeight);
-
-    });
-
-
-    // // Hide the thumbs on load
-    // $('.fotorama__nav-wrap').addClass('idle');
-
-
-    // 1. Initialize fotorama manually.
-    var $fotoramaDiv = jQuery('.fotorama').fotorama();        
-    // 2. Get the API object.
-    var fotorama = $fotoramaDiv.data('fotorama');
-
-    // add our buttons 
-    jQuery('<div class="fotorama_custom__arr fotorama_custom__arr--prev"><</div>').insertBefore('.fotorama__nav-wrap');
-    jQuery('<div class="fotorama_custom__arr fotorama_custom__arr--thumbs"><</div>').insertBefore('.fotorama__nav-wrap');
-    jQuery('<div class="fotorama_custom__arr fotorama_custom__arr--next">></div>').insertBefore('.fotorama__nav-wrap');
+        $('.fotorama')
+        .on('fotorama:show fotorama:load', function (e, fotorama) {    
+            fotorama.$caption = fotorama.$caption || $(this).next('.fotorama-caption');
+            fotorama.$caption.text(fotorama.activeFrame.caption);
+            $('.fotorama-caption').insertAfter('.fotorama__stage').show(); 
+            // set the height of our #masthead based on the height of the stage
+            var stageHeight = ''; 
+            matchElHeights(media_query, stageHeight);  
+        });
 
 
 
-    // var controls_prev = jQuery('<div class='fotorama_custom__arr fotorama_custom__arr--prev'><svg viewBox='0 0 100 100' class='icon'><use xlink:href='#icon-arrow-left' ></use></svg></div>');
+        // 1. Initialize fotorama manually.
+        var $fotoramaDiv = jQuery('.fotorama').fotorama();        
+        // 2. Get the API object.
+        var fotorama = $fotoramaDiv.data('fotorama');
 
-    // var controls_thumb = jQuery('<div class='fotorama_custom__arr fotorama_custom__arr--thumbs'><svg viewBox='0 0 100 100' class='icon'><use xlink:href='#icon-ellipsis' ></use></svg></div>');
+        // add our buttons 
+        jQuery('<div class="fotorama_custom__arr fotorama_custom__arr--prev"><</div>').insertBefore('.fotorama__nav-wrap');
+        jQuery('<div class="fotorama_custom__arr fotorama_custom__arr--thumbs"><</div>').insertBefore('.fotorama__nav-wrap');
+        jQuery('<div class="fotorama_custom__arr fotorama_custom__arr--next">></div>').insertBefore('.fotorama__nav-wrap');
 
-    // var controls_next = jQuery('<div class='fotorama_custom__arr fotorama_custom__arr--next'><svg viewBox='0 0 100 100' class='icon'><use xlink:href='#icon-arrow-left2' ></use></svg></div>');
-
-    // $('<div class='control_wrap cf'></div>')
-    // .append(controls_prev)
-    // .append(controls_thumb)
-    // .append(controls_next)
-    // .insertBefore('.fotorama__nav-wrap');
-
-
-    // make the buttons functionality
-    jQuery('.fotorama_custom__arr--prev').click(function () {
-        // if (fotorama.activeIndex === 0) {
-        //     $(this).addClass('disable');
-        // } else {
-        //     $(this).removeClass('disable');
-        // }
-
-        fotorama.show('<');
-    });
+        // $('<div class='control_wrap cf'></div>')
+        // .append(controls_prev)
+        // .append(controls_thumb)
+        // .append(controls_next)
+        // .insertBefore('.fotorama__nav-wrap');
 
 
+        // make the buttons functionality
+        $('.fotorama_custom__arr--prev').click(function () {
+            // if (fotorama.activeIndex === 0) {
+            //     $(this).addClass('disable');
+            // } else {
+            //     $(this).removeClass('disable');
+            // }
 
-    jQuery('.fotorama_custom__arr--next').click(function () {
-        fotorama.show('>');
-        // console.log(fotorama.activeIndex);
-    });
+            fotorama.show('<');
+        });
 
-    jQuery('.fotorama_custom__arr--thumbs').click(function () {
-        $(this).toggleClass('on');
-        // $('.fotorama__nav-wrap').toggleClass('idle');
-        // $('.fotorama__nav-wrap').animate({
-        //     height: 'toggle'
-        // }, 'fast');
-        $('.fotorama__nav-wrap').toggle();
 
-        // console.log('thumbs clicked');
-    });   
+
+        $('.fotorama_custom__arr--next').click(function () {
+            fotorama.show('>');
+        });
+
+        $('.fotorama_custom__arr--thumbs').click(function () {
+            $(this).toggleClass('on');
+            // $('.fotorama__nav-wrap').toggleClass('idle');
+            // $('.fotorama__nav-wrap').animate({
+            //     height: 'toggle'
+            // }, 'fast');
+            $('.fotorama__nav-wrap').toggle();
+        });   
 
 
 
 
 
 
-    $('.fotorama')
-        // Listen to the events
-        .on(
-            // 'fotorama:ready ' +           // Fotorama is fully ready
-            // 'fotorama:show ' +            // Start of transition to the new frame
-            'fotorama:showend ' +         // End of the show transition
-            'fotorama:load '             // Stage image of some frame is loaded
-            // 'fotorama:error ' +           // Stage image of some frame is broken
-            // 'fotorama:startautoplay ' +   // Slideshow is started
-            // 'fotorama:stopautoplay ' +    // Slideshow is stopped
-            // 'fotorama:fullscreenenter ' + // Fotorama is fullscreened
-            // 'fotorama:fullscreenexit ' +  // Fotorama is unfullscreened
-            // 'fotorama:loadvideo ' +       // Video iframe is loaded
-            // 'fotorama:unloadvideo'
-            ,       // Video iframe is removed
+        // $('.fotorama')
+        // .on('fotorama:showend ' + 'fotorama:load ' , function (e, fotorama, extra) {
 
-            function (e, fotorama, extra) {
+        //             var index = fotorama.data.length - 1;
 
-                var index = fotorama.data.length - 1;
+        //             if (fotorama.activeIndex === 0) {
+        //                     $('.fotorama_custom__arr--prev').addClass('disable');
+        //                 } else {
+        //                     $('.fotorama_custom__arr--prev').removeClass('disable');
+        //             }
 
-                // console.log(index);
-
-
-                if (fotorama.activeIndex === 0) {
-                    $('.fotorama_custom__arr--prev').addClass('disable');
-                } else {
-                    $('.fotorama_custom__arr--prev').removeClass('disable');
-                }
-
-                if (fotorama.activeIndex === index) {
-                    $('.fotorama_custom__arr--next').addClass('disable');
-                } else {
-                    $('.fotorama_custom__arr--next').removeClass('disable');
-                }
-
-
-              // console.log('## ' + e.type);
-              // console.log('active frame', fotorama.activeFrame);
-              // console.log('additional data', extra);
-            }
-        );     
-
-    });
+        //             if (fotorama.activeIndex === index) {
+        //                     $('.fotorama_custom__arr--next').addClass('disable');
+        //                 } else {
+        //                     $('.fotorama_custom__arr--next').removeClass('disable');
+        //             }
+        //         }
+        //     );     
 
 
 
-       
 
 
+        $('.fotorama')
+        .on('fotorama:fullscreenenter ', function (e, fotorama) {    
+            $('.fotorama-caption').css('height','0') ;
+        });
 
+        $('.fotorama')
+        .on('fotorama:fullscreenexit ', function (e, fotorama) {    
+            $('.fotorama-caption').css('height','auto') ;
+        });
 
 
 
@@ -209,6 +160,14 @@
                 }            
             }        
         });
+
+
+
+
+
+
+
+    });
 
 })(jQuery);
 
